@@ -3,6 +3,8 @@
 :root {
   --hover-navbar-color: #24848de5;
   --icon-hover-color: #65f2ffe5;
+  --neon-color: rgb(255, 255, 255);
+  --neon-shadow-color: rgba(255, 255, 255, 0.466);
 
   --navbar-shadow: 4px;
 }
@@ -38,13 +40,16 @@ li {
   background: #000;
   overflow-x: hidden;
   z-index: 0;
+  overflow-y: hidden;
 }
 .videoBG {
   position: absolute;
   align-self: flex-start;
+  transform: scale(1.2);
+  /* background: no-repeat center center/cover; */
   width: auto;
   height: 100vh;
-  margin: auto;
+  margin: 0 auto;
   z-index: -2;
 }
 .hero::before {
@@ -61,6 +66,7 @@ li {
 }
 
 .hero .header {
+  margin-top: 40px;
   position: relative;
   height: 100%;
   color: #fff;
@@ -69,20 +75,44 @@ li {
   align-items: center;
   flex-direction: column;
 }
+.hero .header .name,
+.hero .header .profession {
+  display: flex;
+  flex-direction: row;
+}
 
-.hero .header h1 {
+.hero .header .name h1 {
   cursor: default;
   font-weight: 200;
   font-size: 70px;
   color: #fff;
   text-shadow: 0px 0px 3px rgb(73, 228, 255), 0px 0px 10px #000;
 }
-.hero .header p {
+.hero .header .name h1:hover,
+.hero .header .profession p:hover {
+  color: var(--icon-hover-color);
+  /* font-weight: 300; */
+  /* transition: 4s step-end; */
+}
+#neon,
+#neon2 {
+  transition: color 300ms ease-in-out, text-shadow 1000ms ease-in-out;
+}
+#neon.show,
+#neon2.show {
+  color: var(--neon-color);
+  text-shadow: 1px 1px 10px var(--neon-shadow-color),
+    -1px -1px 10px var(--neon-shadow-color),
+    1px -1px 10px var(--neon-shadow-color),
+    -1px 1px 10px var(--neon-shadow-color);
+}
+.hero .header .profession p {
   cursor: default;
   font-weight: 100;
   font-size: 35px;
   text-shadow: 0px 0px 3px rgb(73, 228, 255), 0px 0px 10px #000;
 }
+
 .hero .header .social {
   width: 250px;
   padding: 40px 0;
