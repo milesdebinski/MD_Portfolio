@@ -5,3 +5,6 @@
   margin: auto;
   overflow: hidden;
 }
+.layer {
+  transition: transform 80ms ease;
+}
