@@ -55,8 +55,8 @@ const startWhenLoaded = () => {
   turnOnNeons_FWD();
 };
 window.addEventListener("load", startWhenLoaded);
-
 // ---
+
 // Hide header on scroll
 const overlay = document.querySelector(".overlay");
 let lastScrollTop = 0;
@@ -77,3 +77,51 @@ window.addEventListener("scroll", () => {
   }
   lastScrollTop = st;
 });
+// ---
+
+// Smooth Scrolling
+function smoothScroll(target, duration) {
+  const section = document.querySelector(target);
+  const sectionPosition = section.getBoundingClientRect().top;
+  const startPosition = window.pageYOffset;
+  const distance = sectionPosition - startPosition;
+
+  let startTime = null;
+  console.log(`
+  sectionPosition=${sectionPosition},
+  startPosition=${startPosition},
+  
+  distance=${distance},`);
+
+  function animationScroll(currentTime) {
+    if (startTime === null) startTime = currentTime;
+    const timeElapsed = currentTime - startTime;
+    const run = ease(timeElapsed, startPosition, sectionPosition, duration);
+    window.scrollTo(0, run);
+    if (timeElapsed < duration) requestAnimationFrame(animationScroll);
+  }
+
+  function ease(t, b, c, d) {
+    t /= d / 2;
+    if (t < 1) return (c / 2) * t * t + b;
+    t--;
+    return (-c / 2) * (t * (t - 2) - 1) + b;
+  }
+
+  requestAnimationFrame(animationScroll);
+}
+
+const home = document.getElementById("nav_home");
+const about = document.getElementById("nav_about");
+const projects = document.getElementById("nav_projects");
+const contact = document.getElementById("nav_contact");
+about.addEventListener("click", () => {
+  smoothScroll(".about", 1000);
+});
+projects.addEventListener("click", () => {
+  smoothScroll(".projects", 1000);
+});
+home.addEventListener("click", () => {
+  smoothScroll(".hero", 1000);
+});
+// ---
