@@ -46,9 +46,11 @@ const turnOnNeons_FWD = () => {
   });
 };
 
-setInterval(() => {
+const startWhenLoaded = () => {
+  setInterval(() => {
+    turnOnNeons_MD();
+    turnOnNeons_FWD();
+  }, 12500);
   turnOnNeons_MD();
   turnOnNeons_FWD();
-}, 13000);
-turnOnNeons_MD();
-turnOnNeons_FWD();
+};
