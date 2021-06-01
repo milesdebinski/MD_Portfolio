@@ -29,9 +29,13 @@ body {
   overflow-x: hidden;
 }
 h2 {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 50px;
   color: var(--gray-color);
+}
+img {
+  width: 100%;
+  height: auto;
 }
 p {
   font-size: 18px;
@@ -271,9 +275,38 @@ i.react {
 /* --- */
 /* PROJECTS */
 .projects {
-  background: var(--dark-color);
+  /* background: var(--gray-color); */
+  background-color: #bfc9ca;
+  background-image: url("https://www.transparenttextures.com/patterns/p2.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
   padding: 60px 0;
-  height: 1000px;
-
+  /* height: 1000px; */
   text-align: center;
+}
+.projects h2 {
+  color: var(--dark-color);
+  font-weight: 500;
+}
+.flex_projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.projects .flex_projects .project {
+  max-width: 700px;
+  height: auto;
+  background: var(--dark-second-color);
+  margin: 80px 0;
+  box-shadow: 0px 0px 5px 1px #000;
+}
+.projects .flex_projects .project.one {
+  margin-left: 70px;
+}
+.projects .flex_projects .project.two {
+  margin-right: 70px;
+}
+.projects .flex_projects .project.three {
+  margin-left: 70px;
 }
