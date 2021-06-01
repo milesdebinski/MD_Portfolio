@@ -55,6 +55,7 @@ const startWhenLoaded = () => {
   turnOnNeons_FWD();
 };
 window.addEventListener("load", startWhenLoaded);
+
 // ---
 // Hide header on scroll
 const overlay = document.querySelector(".overlay");
