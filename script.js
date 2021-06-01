@@ -54,6 +54,7 @@ const startWhenLoaded = () => {
   turnOnNeons_MD();
   turnOnNeons_FWD();
 };
+// run after load (good for old devices)
 window.addEventListener("load", startWhenLoaded);
 // ---
 
@@ -90,9 +91,9 @@ function smoothScroll(target, duration) {
   console.log(`
   sectionPosition=${sectionPosition},
   startPosition=${startPosition},
-  
   distance=${distance},`);
 
+  // easing functions - http://gizma.com/easing/
   function animationScroll(currentTime) {
     if (startTime === null) startTime = currentTime;
     const timeElapsed = currentTime - startTime;
@@ -102,9 +103,11 @@ function smoothScroll(target, duration) {
   }
 
   function ease(t, b, c, d) {
-    return (-c / 2) * (Math.cos((Math.PI * t) / d) - 1) + b;
+    t /= d / 2;
+    if (t < 1) return (c / 2) * t * t + b;
+    t--;
+    return (-c / 2) * (t * (t - 2) - 1) + b;
   }
-
   requestAnimationFrame(animationScroll);
 }
 
