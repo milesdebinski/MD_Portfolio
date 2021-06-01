@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="utility.css">
     <link rel="stylesheet" href="media.css">
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     <script src="script.js" defer></script>
-    <title>Document</title>
+    <title>Miles Debinski</title>
   </head>
   <body>
     <div class="navbar">
@@ -25,7 +26,8 @@
     </div>
 
 
-    <div class="hero">
+    <div id="home" class="hero">
+      <div class="overlay"></div>
       <div class="header">
         <div data-speed="2" class="name layer">
           <h1 id="neon">M</h1 id="neon"><h1 id="neon">i</h1 id="neon"><h1
@@ -52,14 +54,81 @@
         </div>
       </div>
       <video class="videoBG" autoplay loop muted poster="img/poster.jpg"
-        oncanplaythrough="startWhenLoaded();">
+        onloadeddata="startWhenLoaded();">
         <source src="./vid/bg_vid_s.mp4" type="video/mp4">
       </video>
     </div>
 
     <section id="about" class="about">
-      <div class="quote">Nice quote</div>
 
+      <div class="container">
+        <h2>About</h2>
+        <div class="flex_about">
+          <div class="text">
+            <h3>Title</h3>
+            <p>I am a Master’s student in the Department of Computer Science at
+              the University of Texas at Dallas graduating in May 2021. I have a
+              Bachelor of Technology degree from the Indian Institute of
+              Technology (IIT) Guwahati.
+              <br><br>
+              Previously, I worked at Works Applications, Singapore as a
+              Software Engineer, where I worked on delivering libraries,
+              microservices and distributed multi-tenant architecture to
+              thousands of developers inside the company who utilized them to
+              build various products for our customers. Aside from work, I am
+              also an open-source enthusiast and have created projects that were
+              listed in GitHub trending.
+              <br><br>
+              My interests lie in solving problems related to large-scale
+              distributed software systems.</p>
+          </div>
+          <img data-speed="5" class="layer" src="./img/profile_cropped.png"
+            alt="">
+        </div>
+      </div>
+    </section>
+    <section class="skills">
+      <div class="container">
+        <h2>Skills</h2>
+        <div class="grid_skills">
+          <div class="skill">
+            <i class="html fab fa-html5 fa-3x"></i>
+            <h3>HTML</h3>
+            <p>Short Description</p>
+          </div>
+          <div class="skill">
+            <i class="css fab fa-css3-alt fa-3x"></i>
+            <h3>CSS</h3>
+            <p>Short Description</p>
+          </div>
+          <div class="skill">
+            <i class="javascript fab fa-js-square fa-3x"></i>
+            <h3>Javascript</h3>
+            <p>Short Description</p>
+          </div>
+          <div class="skill">
+            <!-- <i class="brush fas fa-paint-brush fa-3x"></i> -->
+            <span class="iconify" data-icon="logos-typescript-icon"
+              data-inline="false"></span>
+            <h3>Typescript</h3>
+            <p>Short Description</p>
+          </div>
+          <div class="skill">
+            <i class="react fab fa-react fa-3x"></i>
+            <h3>React</h3>
+            <p>Short Description</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <section id="projects" class="projects">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="project">
+
+        </div>
+      </div>
     </section>
 
   </body>

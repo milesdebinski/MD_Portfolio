@@ -1,10 +1,28 @@
 .container {
   position: relative;
   max-width: 1280px;
-  padding: 0 25px;
+  padding: 0 40px;
   margin: auto;
   overflow: hidden;
 }
 .layer {
-  transition: transform 80ms ease;
+  transition: transform 400ms ease-out;
+}
+.overlay {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+
+  /* background: rgba(255, 255, 255, 0); */
+  background: linear-gradient(
+    0deg,
+    rgba(51, 51, 51, 0) 0%,
+    rgba(51, 51, 51, 0) 90%
+  );
+}
+.iconify {
+  width: 42px;
+  height: 42px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.753);
 }
