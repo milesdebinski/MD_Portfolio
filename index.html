@@ -9,11 +9,14 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="utility.css">
     <link rel="stylesheet" href="media.css">
+
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     <script src="script.js" defer></script>
     <title>Miles Debinski</title>
   </head>
   <body>
+
+
     <div class="navbar">
       <div class="container">
         <ul>
@@ -25,24 +28,26 @@
       </div>
     </div>
 
-
     <div id="home" class="hero">
       <div class="overlay"></div>
       <div class="header">
         <div data-speed="2" class="name layer">
-          <h1 id="neon">M</h1 id="neon"><h1 id="neon">i</h1 id="neon"><h1
-            id="neon">l</h1><h1 id="neon">e</h1><h1 id="neon">s</h1><h1
-            id="neon">&nbspD</h1><h1 id="neon">e</h1><h1 id="neon">b</h1><h1
-            id="neon">i</h1><h1 id="neon">n</h1><h1 id="neon">s</h1><h1
-            id="neon">k</h1><h1 id="neon">i</h1>
+          <h1 id="neon_md">M</h1 id="neon_md"><h1 id="neon_md">i</h1
+            id="neon_md"><h1
+            id="neon_md">l</h1><h1 id="neon_md">e</h1><h1 id="neon_md">s</h1><h1
+            id="neon_md">&nbspD</h1><h1 id="neon_md">e</h1><h1 id="neon_md">b</h1><h1
+            id="neon_md">i</h1><h1 id="neon_md">n</h1><h1 id="neon_md">s</h1><h1
+            id="neon_md">k</h1><h1 id="neon_md">i</h1>
         </div>
         <div data-speed="2" class="profession layer">
-          <p id="neon2">F</p><p id="neon2">r</p><p id="neon2">o</p><p
-            id="neon2">n</p><p id="neon2">t</p><p id="neon2">e</p><p id="neon2">n</p><p
-            id="neon2">d&nbsp</p><p id="neon2">W</p><p id="neon2">e</p><p
-            id="neon2">b&nbsp</p><p id="neon2">D</p><p id="neon2">e</p><p
-            id="neon2">v</p><p id="neon2">e</p><p id="neon2">l</p><p id="neon2">o</p><p
-            id="neon2">p</p><p id="neon2">e</p><p id="neon2">r</p>
+          <p id="neon_fwd">F</p><p id="neon_fwd">r</p><p id="neon_fwd">o</p><p
+            id="neon_fwd">n</p><p id="neon_fwd">t</p><p id="neon_fwd">e</p><p
+            id="neon_fwd">n</p><p
+            id="neon_fwd">d&nbsp</p><p id="neon_fwd">W</p><p id="neon_fwd">e</p><p
+            id="neon_fwd">b&nbsp</p><p id="neon_fwd">D</p><p id="neon_fwd">e</p><p
+            id="neon_fwd">v</p><p id="neon_fwd">e</p><p id="neon_fwd">l</p><p
+            id="neon_fwd">o</p><p
+            id="neon_fwd">p</p><p id="neon_fwd">e</p><p id="neon_fwd">r</p>
         </div>
         <div class="social">
           <a class="layer" data-speed="4" href=""><i class="fab fa-github
@@ -60,11 +65,22 @@
     </div>
 
     <section id="about" class="about">
+      <div class="wrap_parallax">
+        <div class="parallax_icons">
+          <i data-speed="10" class="layer fas fa-code-branch fa-3x"></i>
+          <i data-speed="10" class="layer fas fa-code fa-3x"></i>
+          <i data-speed="10" class="layer fas fa-laptop-code fa-3x"></i>
+        </div>
+      </div>
+
       <div class="container">
+        <!-- Parallax Icons -->
+
+        <!-- --- -->
         <h2>About</h2>
         <div class="flex_about">
           <div class="text">
-            <h3>Title</h3>
+            <h3>My Coding Journey</h3>
             <p>I am a Master’s student in the Department of Computer Science at
               the University of Texas at Dallas graduating in May 2021. I have a
               Bachelor of Technology degree from the Indian Institute of
@@ -81,63 +97,107 @@
               My interests lie in solving problems related to large-scale
               distributed software systems.</p>
           </div>
-          <img data-speed="5" class="layer" src="./img/profile_cropped.png"
+          <img src="./img/profile_cropped.png"
             alt="">
+
         </div>
-      </div>
-    </section>
-    <section class="skills">
-      <div class="container">
-        <h2>Skills</h2>
         <div class="grid_skills">
           <div class="skill">
-            <i class="html fab fa-html5 fa-3x"></i>
+            <i class="html fab fa-html5 fa-2x"></i>
             <h3>HTML</h3>
-            <p>Short Description</p>
+            <div class="stars">
+              <i id="h_star" class="star fas fa-star"></i>
+              <i id="h_star" class="star fas fa-star"></i>
+              <i id="h_star" class="star fas fa-star"></i>
+              <i id="h_star" class="star fas fa-star"></i>
+              <i id="h_star" class="far fa-star"></i>
+            </div>
+
           </div>
           <div class="skill">
-            <i class="css fab fa-css3-alt fa-3x"></i>
+            <i class="css fab fa-css3-alt fa-2x"></i>
             <h3>CSS</h3>
-            <p>Short Description</p>
+            <div class="stars">
+              <i id="c_star" class="star fas fa-star"></i>
+              <i id="c_star" class="star fas fa-star"></i>
+              <i id="c_star" class="star fas fa-star"></i>
+              <i id="c_star" class="star fas fa-star"></i>
+              <i id="c_star" class="far fa-star"></i>
+            </div>
           </div>
           <div class="skill">
-            <i class="javascript fab fa-js-square fa-3x"></i>
+            <i class="javascript fab fa-js-square fa-2x"></i>
             <h3>Javascript</h3>
-            <p>Short Description</p>
+            <div class="stars">
+              <i id="j_star" class="star fas fa-star"></i>
+              <i id="j_star" class="star fas fa-star"></i>
+              <i id="j_star" class="star fas fa-star"></i>
+              <i id="j_star" class="far fa-star"></i>
+              <i id="j_star" class="far fa-star"></i>
+            </div>
           </div>
           <div class="skill">
-            <!-- <i class="brush fas fa-paint-brush fa-3x"></i> -->
-            <span class="iconify" data-icon="logos-typescript-icon"
-              data-inline="false"></span>
+            <!-- <span class="iconify" data-icon="logos-typescript-icon"
+              data-inline="false"></span> -->
+            <img class="ts" src="./img/ts.png" alt="">
             <h3>Typescript</h3>
-            <p>Short Description</p>
+            <div class="stars">
+              <i id="t_star" class="star fas fa-star"></i>
+              <i id="t_star" class="star fas fa-star"></i>
+              <i id="t_star" class="far fa-star"></i>
+              <i id="t_star" class="far fa-star"></i>
+              <i id="t_star" class="far fa-star"></i>
+            </div>
+          </div>
+
+          <div class="skill">
+            <i class="react fab fa-react fa-2x"></i>
+            <h3>React</h3>
+            <div class="stars">
+              <i id="r_star" class="star fas fa-star"></i>
+              <i id="r_star" class="star fas fa-star"></i>
+              <i id="r_star" class="far fa-star"></i>
+              <i id="r_star" class="far fa-star"></i>
+              <i id="r_star" class="far fa-star"></i>
+            </div>
           </div>
           <div class="skill">
-            <i class="react fab fa-react fa-3x"></i>
-            <h3>React</h3>
-            <p>Short Description</p>
+            <i class="node fab fa-node fa-2x"></i>
+            <h3>Node</h3>
+            <div class="stars">
+              <i id="n_star" class="star fas fa-star"></i>
+              <i id="n_star" class="far fa-star"></i>
+              <i id="n_star" class="far fa-star"></i>
+              <i id="n_star" class="far fa-star"></i>
+              <i id="n_star" class="far fa-star"></i>
+            </div>
           </div>
 
         </div>
-      </div>
-    </section>
-    <section id="projects" class="projects">
-      <div class="container">
-        <h2>Projects</h2>
-        <div class="flex_projects">
+      </section>
 
-          <div class="one project">
-            <img src="./img/project1.jpg" alt="">
-          </div>
-          <div class="two project">
-            <img src="./img/project2.jpg" alt="">
-          </div>
-          <div class="three project">
-            <img src="./img/project3.jpg" alt="">
+      <section class="skills">
+        <div class="container">
+
+        </div>
+      </section>
+
+      <section id="projects" class="projects">
+        <div class="container">
+          <h2>Projects</h2>
+          <div class="flex_projects">
+            <div class="one project">
+              <img src="./img/project1.jpg" alt="">
+            </div>
+            <div class="two project">
+              <img src="./img/project2.jpg" alt="">
+            </div>
+            <div class="three project">
+              <img src="./img/project3.jpg" alt="">
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-  </body>
-</html>
+    </body>
+  </html>

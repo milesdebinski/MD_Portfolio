@@ -3,7 +3,14 @@
   max-width: 1280px;
   padding: 0 40px;
   margin: auto;
-  /* overflow: hidden; */
+}
+.wrap_parallax {
+  position: absolute;
+  max-width: 1680px;
+  padding: 0px 10px;
+  margin: auto;
+  height: 100%;
+  width: 100%;
 }
 .layer {
   transition: transform 400ms ease-out;
@@ -20,9 +27,12 @@
     rgba(51, 51, 51, 0) 90%
   );
 }
-.iconify {
-  width: 42px;
-  height: 42px;
-  border-radius: 3px;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.753);
+.skill img.ts {
+  width: 29px;
+  height: 29px;
+  border-radius: 5px;
+  margin-bottom: -3px;
+  margin-top: 3px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.411);
+  background: rgba(0, 0, 0, 0.315);
 }
