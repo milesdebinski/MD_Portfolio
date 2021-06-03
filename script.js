@@ -280,3 +280,26 @@ window.addEventListener("scroll", project_check);
 window.addEventListener("load", project_check);
 window.addEventListener("resize", project_check);
 // ---
+
+// Hover effect Navbar & Footer
+const under_text = document.querySelectorAll(".under_text");
+const under = document.querySelectorAll(".under");
+console.log(under_text);
+console.log(under);
+under_text.forEach((el, i) => {
+  el.addEventListener("mouseover", () => {
+    under[i].style.background = "var(--icon-hover-color)";
+    under[i].style.transition = "220ms ease-in-out";
+    under[i].style.width = "100%";
+  });
+
+  el.addEventListener("mouseout", () => {
+    under[i].style.background = "#fff";
+    under[i].style.transform = "translate(100px,0)";
+    under[i].style.width = "0%";
+    setTimeout(() => {
+      under[i].style.transition = "0ms ease-in-out";
+      under[i].style.transform = "translate(0,0)";
+    }, 460);
+  });
+});

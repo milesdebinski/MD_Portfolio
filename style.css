@@ -118,7 +118,7 @@ li {
 .hero .header .name h1 {
   cursor: default;
   font-weight: 200;
-  font-size: 70px;
+  font-size: 85px;
   color: var(--bright-color);
   text-shadow: 0px 0px 3px rgb(73, 228, 255), 0px 0px 10px #000;
 }
@@ -163,45 +163,93 @@ li {
   color: #fff;
   cursor: pointer;
 }
-.social i {
+.hero .header .social p {
+  margin-left: -5px;
+  margin-top: 3px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  cursor: pointer;
+  /* padding: 2px 4px; */
+  border-radius: 50%;
+}
+.social i,
+.social p {
   text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1), -1px -1px 8px rgba(0, 0, 0, 0.1),
     1px -1px 8px rgba(0, 0, 0, 0.1), -1px 1px 8px rgba(0, 0, 0, 0.1);
 }
-.social i:hover {
+.social i:hover,
+.social p.icon:hover {
   text-shadow: 1px 1px 2px var(--hover-navbar-color),
     -1px -1px 2px var(--hover-navbar-color),
     1px -1px 2px var(--hover-navbar-color),
     -1px 1px 2px var(--hover-navbar-color);
   color: var(--icon-hover-color);
+  border-color: var(--icon-hover-color);
   transition: 100ms linear;
 }
+
 /* --- */
 /* NAVBAR */
 .navbar {
   width: 100%;
-  height: 100px;
+  height: 90px;
   position: absolute;
   /* background: rgba(33, 46, 54, 0.6); */
   /* border-bottom: 1px rgba(255, 255, 255, 0.2) solid; */
   z-index: 4;
 }
-.navbar img {
-  width: 70px;
+.navbar .flex_navbar {
+  display: flex;
 }
 .navbar ul {
+  flex: 1;
   width: 100%;
-  height: 100px;
+  height: 90px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-  font-weight: 200;
-  font-size: 24px;
+  font-weight: 500;
+  font-size: 22px;
+  font-family: "Work Sans", sans-serif;
+  text-shadow: 0px 0px 3px #fff;
+}
+.navbar img {
+  flex: 1;
+  width: 70px;
+  height: auto;
+  max-width: 70px;
+
+  /* justify-self: flex-start; */
 }
 .navbar ul li {
   transition: 150ms ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.navbar ul li .under {
+  margin-top: -4px;
+  align-self: flex-end;
+  position: relative;
+  width: 0%;
+  height: 3px;
+  border-radius: 10px;
+  background: #fff;
+  transition: 150ms ease-in-out;
+  z-index: -1;
+}
+.navbar ul li .under:hover {
+  width: 100%;
 }
 .navbar ul li a {
-  padding: 10px;
+  /* padding: 5px; */
+  margin: 0 20px;
+  /* border: 1px solid red; */
+  overflow: hidden;
 }
 .navbar ul li:hover,
 .navbar ul li.current {
