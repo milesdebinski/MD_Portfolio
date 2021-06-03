@@ -390,7 +390,7 @@ i.react {
   background: rgba(0, 0, 0, 0.301);
   border: 1px rgba(255, 255, 255, 0.315) solid;
   box-shadow: 0px 0px 5px 1px rgba(9, 15, 17, 0.336);
-  cursor: pointer;
+  cursor: default;
   overflow: hidden;
   opacity: 0;
   transition: 500ms ease-in-out;
@@ -411,6 +411,30 @@ i.react {
 .projects .flex_projects .project:nth-child(odd) {
   transform: translate(-100px, 0);
 }
+
+.projects .flex_projects .project .show_box {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 3;
+  padding: 0px 40px;
+  text-align: justify;
+  bottom: 15%;
+  transform: translate(0, 40px);
+  opacity: 0;
+  transition: 250ms ease-in-out;
+}
+.projects .flex_projects .project .show_box p {
+  padding: 30px 0;
+}
+.projects .flex_projects .project .show_box .buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 .projects .flex_projects .project img {
   transition: 200ms ease-in-out;
 }
@@ -431,6 +455,7 @@ i.react {
 }
 
 .projects .flex_projects .project .info {
+  /* opacity: 0; */
   color: #fff;
   position: absolute;
   display: flex;
@@ -444,7 +469,7 @@ i.react {
   background: rgba(77, 96, 105, 0.288);
   box-shadow: 0px 0px 5px 5px rgba(16, 44, 51, 0.171);
   width: 100%;
-  transition: 250ms ease-in-out;
+  transition: 600ms ease-in-out;
 }
 .projects .flex_projects .project .info h3 {
   font-size: 40px;

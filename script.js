@@ -147,6 +147,7 @@ const run = () => {
 };
 window.addEventListener("scroll", run);
 window.addEventListener("load", run);
+window.addEventListener("resize", run);
 isInViewport_skills();
 // ---
 // Hide header on scroll
@@ -225,16 +226,36 @@ const projects_array = document.querySelectorAll(".project");
 const covers_array = document.querySelectorAll(".cover");
 const img_array = document.querySelectorAll(".project_img");
 const info_array = document.querySelectorAll(".info");
-
+const show_box_array = document.querySelectorAll(".show_box");
+let project_up = false;
 projects_array.forEach((el, i) => {
   el.addEventListener("mouseover", () => {
+    console.log("up");
+
     covers_array[i].style.transform = "translate(0, 0)";
     img_array[i].style.transform = "scale(1.03)";
+    info_array[i].style.transition = "600ms";
+    info_array[i].style.transform = "translate(0,-160px)";
+
+    setTimeout(() => {
+      show_box_array[i].style.opacity = "1";
+      show_box_array[i].style.transform = "translate(0,0)";
+    }, 200);
   });
+
   el.addEventListener("mouseout", () => {
+    console.log("down");
+
     covers_array[i].style.transform = "translate(-500px, 0)";
     img_array[i].style.transform = "scale(1)";
-    info_array[i].style.transform = "scale(1)";
+
+    setTimeout(() => {
+      show_box_array[i].style.opacity = "0";
+      show_box_array[i].style.transform = "translate(0,40px)";
+    }, 200);
+
+    info_array[i].style.transform = "translate(0,0)";
+    info_array[i].style.transition = "1.3s";
   });
 });
 // ---
@@ -251,10 +272,11 @@ const project_check = () => {
       setTimeout(() => {
         el.style.transform = "translate(0,0)";
         el.style.opacity = "1";
-      }, 400);
+      }, 350);
     }
   });
 };
-
 window.addEventListener("scroll", project_check);
+window.addEventListener("load", project_check);
+window.addEventListener("resize", project_check);
 // ---
