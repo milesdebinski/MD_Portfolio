@@ -240,7 +240,7 @@ projects_array.forEach((el, i) => {
     setTimeout(() => {
       show_box_array[i].style.opacity = "1";
       show_box_array[i].style.transform = "translate(0,0)";
-    }, 200);
+    }, 100);
   });
 
   el.addEventListener("mouseout", () => {
@@ -252,7 +252,7 @@ projects_array.forEach((el, i) => {
     setTimeout(() => {
       show_box_array[i].style.opacity = "0";
       show_box_array[i].style.transform = "translate(0,40px)";
-    }, 200);
+    }, 100);
 
     info_array[i].style.transform = "translate(0,0)";
     info_array[i].style.transition = "1.3s";
