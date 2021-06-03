@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Share+Tech+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 :root {
   --hover-navbar-color: #24848de5;
@@ -219,7 +219,7 @@ li {
   left: 0%;
   width: 100%;
   height: 100%;
-  /* border: 1px red solid; */
+  overflow: hidden;
 }
 .parallax_icons * {
   position: relative;
@@ -339,7 +339,8 @@ li {
 #t_star.neon,
 #r_star.neon,
 #n_star.neon {
-  text-shadow: 0px 0px 15px rgb(73, 228, 255);
+  text-shadow: 0px 0px 10px rgba(255, 244, 180, 0.596);
+  transition: text-shadow 200ms ease-in-out;
 }
 
 i.html {
@@ -362,37 +363,100 @@ i.react {
 /* PROJECTS */
 .projects {
   /* background: var(--gray-color); */
-  background-color: #bfc9ca;
-  background-image: url("https://www.transparenttextures.com/patterns/p2.png");
-  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  background-color: var(--dark-second-color);
   padding: 60px 0;
-  /* height: 1000px; */
   text-align: center;
 }
 .projects h2 {
-  color: var(--dark-color);
-  font-weight: 300;
 }
 .flex_projects {
+  padding: 40px 0;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
 }
 
 .projects .flex_projects .project {
-  max-width: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  max-width: 500px;
+  width: 100%;
   height: auto;
-  background: var(--dark-second-color);
-  margin: 80px 0;
-  box-shadow: 0px 0px 5px 1px #000;
+  margin: 30px;
+  background: rgba(0, 0, 0, 0.301);
+  border: 1px rgba(255, 255, 255, 0.315) solid;
+  box-shadow: 0px 0px 5px 1px rgba(9, 15, 17, 0.336);
+  cursor: pointer;
+  overflow: hidden;
+  opacity: 0;
+  transition: 500ms ease-in-out;
 }
-.projects .flex_projects .project.one {
-  margin-left: 70px;
+.projects .flex_projects .project:before {
+  content: "";
+  width: 100%;
+  min-height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background: rgba(18, 24, 26, 0.329);
+  z-index: 1;
 }
-.projects .flex_projects .project.two {
-  margin-right: 70px;
+.projects .flex_projects .project:nth-child(even) {
+  transform: translate(100px, 0);
 }
-.projects .flex_projects .project.three {
-  margin-left: 70px;
+.projects .flex_projects .project:nth-child(odd) {
+  transform: translate(-100px, 0);
+}
+.projects .flex_projects .project img {
+  transition: 200ms ease-in-out;
+}
+
+.projects .flex_projects .project .cover {
+  transform: translateX(-510px);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    0.75turn,
+    rgba(16, 52, 61, 0.863),
+    rgba(12, 182, 224, 0.493)
+  );
+
+  transition: 350ms ease-in-out;
+  z-index: 2;
+}
+
+.projects .flex_projects .project .info {
+  color: #fff;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  top: 60%;
+  left: 0%;
+  padding: 4px 0px 4px 35px;
+  z-index: 3;
+  background: rgba(77, 96, 105, 0.288);
+  box-shadow: 0px 0px 5px 5px rgba(16, 44, 51, 0.171);
+  width: 100%;
+  transition: 250ms ease-in-out;
+}
+.projects .flex_projects .project .info h3 {
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-shadow: 0px 0px 2px rgb(73, 228, 255), 0px 0px 3px rgb(0, 0, 0);
+
+  /* text-shadow: none; */
+}
+.projects .flex_projects .project .info p {
+  font-style: italic;
+  font-weight: 300;
+  font-size: 20px;
+  text-shadow: 0px 0px 2px rgb(73, 228, 255), 0px 0px 3px rgb(0, 0, 0);
 }

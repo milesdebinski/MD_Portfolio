@@ -1,4 +1,4 @@
-// Header - Parallax Effect
+// Parallax Effect
 document.addEventListener("mousemove", parallax);
 function parallax(el) {
   this.querySelectorAll(".layer").forEach((layer) => {
@@ -12,29 +12,34 @@ function parallax(el) {
 }
 // ---
 
-// Neon effects - header
+// Neon effects Header & Stars
 const neons_MD = document.querySelectorAll("#neon_md");
 const neons_FWD = document.querySelectorAll("#neon_fwd");
-const neons_stars = document.querySelectorAll(".star");
+const neonsStars_h = document.querySelectorAll(".hf_star");
+const neonsStars_c = document.querySelectorAll(".cf_star");
+const neonsStars_j = document.querySelectorAll(".jf_star");
+const neonsStars_t = document.querySelectorAll(".tf_star");
+const neonsStars_r = document.querySelectorAll(".rf_star");
+const neonsStars_n = document.querySelectorAll(".nf_star");
 
-const turnOnNeons_Stars = () => {
+const turnOnNeons_Stars = (starsArray) => {
   starsOff = false;
   setInterval(() => {
-    neons_stars.forEach((el, i) => {
+    starsArray.forEach((el, i) => {
       // On
       setTimeout(() => {
         el.classList.add("neon");
-      }, i * 200);
+      }, i * 150);
       // Off
       setTimeout(() => {
         setTimeout(() => {
           el.classList.remove("neon");
-        }, i * 200);
-      }, 3200);
+        }, i * 10);
+      }, 2000);
     });
-  }, 7000);
+  }, 4000);
 };
-
+// --
 const turnOnNeons_MD = () => {
   neons_MD.forEach((el, i) => {
     // On
@@ -81,7 +86,7 @@ const startWhenLoaded = () => {
 // run after load (good for old devices)
 window.addEventListener("load", startWhenLoaded);
 // ---
-// Skills & Stars effect
+// Skills & Stars effect - show
 const showStars = () => {
   const neons_h_stars = document.querySelectorAll("#h_star");
   const neons_c_stars = document.querySelectorAll("#c_star");
@@ -90,8 +95,8 @@ const showStars = () => {
   const neons_r_stars = document.querySelectorAll("#r_star");
   const neons_n_stars = document.querySelectorAll("#n_star");
   let star_speed;
-  const showStars_html = () => {
-    neons_h_stars.forEach((el, i) => {
+  const showStars_All = (starsArray) => {
+    starsArray.forEach((el, i) => {
       setTimeout(() => {
         el.classList.add("blink");
       }, i * star_speed);
@@ -103,102 +108,46 @@ const showStars = () => {
       }, star_speed * 1.5);
     });
   };
-  const showStars_css = () => {
-    neons_c_stars.forEach((el, i) => {
-      setTimeout(() => {
-        el.classList.add("blink");
-      }, i * star_speed);
-      setTimeout(() => {
-        setTimeout(() => {
-          el.classList.add("show");
-          el.classList.remove("blink");
-        }, i * star_speed);
-      }, star_speed * 1.5);
-    });
-  };
-  const showStars_javascript = () => {
-    neons_j_stars.forEach((el, i) => {
-      setTimeout(() => {
-        el.classList.add("blink");
-      }, i * star_speed);
-      setTimeout(() => {
-        setTimeout(() => {
-          el.classList.add("show");
-          el.classList.remove("blink");
-        }, i * star_speed);
-      }, star_speed * 1.5);
-    });
-  };
-  const showStars_typescript = () => {
-    neons_t_stars.forEach((el, i) => {
-      setTimeout(() => {
-        el.classList.add("blink");
-      }, i * star_speed);
-      setTimeout(() => {
-        setTimeout(() => {
-          el.classList.add("show");
-          el.classList.remove("blink");
-        }, i * star_speed);
-      }, star_speed * 1.5);
-    });
-  };
-  const showStars_react = () => {
-    neons_r_stars.forEach((el, i) => {
-      setTimeout(() => {
-        el.classList.add("blink");
-      }, i * star_speed);
-      setTimeout(() => {
-        setTimeout(() => {
-          el.classList.add("show");
-          el.classList.remove("blink");
-        }, i * star_speed);
-      }, star_speed * 1.5);
-    });
-  };
-  const showStars_node = () => {
-    neons_n_stars.forEach((el, i) => {
-      setTimeout(() => {
-        el.classList.add("blink");
-      }, i * star_speed);
-      setTimeout(() => {
-        setTimeout(() => {
-          el.classList.add("show");
-          el.classList.remove("blink");
-        }, i * star_speed);
-      }, star_speed * 1.5);
-    });
-  };
+
   // how fast stars appear on the screen
   star_speed = 250;
-  showStars_html();
-  showStars_css();
-  showStars_javascript();
-  showStars_typescript();
-  showStars_react();
-  showStars_node();
+  showStars_All(neons_h_stars);
+  showStars_All(neons_c_stars);
+  showStars_All(neons_j_stars);
+  showStars_All(neons_t_stars);
+  showStars_All(neons_r_stars);
+  showStars_All(neons_n_stars);
 };
 
+const turnOnNeons_Stars_All = () => {
+  turnOnNeons_Stars(neonsStars_h);
+  turnOnNeons_Stars(neonsStars_c);
+  turnOnNeons_Stars(neonsStars_j);
+  turnOnNeons_Stars(neonsStars_t);
+  turnOnNeons_Stars(neonsStars_r);
+  turnOnNeons_Stars(neonsStars_n);
+};
 // ---
 // Are Stars In Viewport?
-const grid_skills = document.querySelector(".grid_skills");
 let starsVisible = true;
 let starsOff = true;
-const isInViewport = () => {
+const grid_skills = document.querySelector(".grid_skills");
+const isInViewport_skills = () => {
   let rect = grid_skills.getBoundingClientRect();
   return rect.top + 120 <= window.innerHeight;
 };
 const run = () => {
-  if (isInViewport(grid_skills) && starsVisible) {
+  if (isInViewport_skills(grid_skills) && starsVisible) {
     showStars(); // show stars
     starsVisible = false;
   }
-  if (isInViewport(grid_skills) && starsOff) {
-    turnOnNeons_Stars();
+  if (isInViewport_skills(grid_skills) && starsOff) {
+    turnOnNeons_Stars_All();
   }
 };
 window.addEventListener("scroll", run);
-
-isInViewport();
+window.addEventListener("load", run);
+isInViewport_skills();
 // ---
 // Hide header on scroll
 const overlay = document.querySelector(".overlay");
@@ -209,13 +158,13 @@ window.addEventListener("scroll", () => {
     overlay.style.background = `linear-gradient(
       0deg,
       rgba(33, 46, 54, ${st / 800}) 0%,
-      rgba(33, 46, 54, ${st / 1000}) 60%
+      rgba(33, 46, 54, ${st / 1000}) 70%
     )`;
   } else {
     overlay.style.background = `linear-gradient(
       0deg,
       rgba(33, 46, 54, ${st / 800}) 0%,
-      rgba(33, 46, 54, ${st / 1000}) 60%
+      rgba(33, 46, 54, ${st / 1000}) 70%
     )`;
   }
   lastScrollTop = st;
@@ -246,10 +195,11 @@ function smoothScroll(target, duration) {
 
   function ease(t, b, c, d) {
     t /= d / 2;
-    if (t < 1) return (c / 2) * t * t + b;
-    t--;
-    return (-c / 2) * (t * (t - 2) - 1) + b;
+    if (t < 1) return (c / 2) * t * t * t + b;
+    t -= 2;
+    return (c / 2) * (t * t * t + 2) + b;
   }
+
   requestAnimationFrame(animationScroll);
 }
 
@@ -257,13 +207,54 @@ const home = document.getElementById("nav_home");
 const about = document.getElementById("nav_about");
 const projects = document.getElementById("nav_projects");
 const contact = document.getElementById("nav_contact");
+
 about.addEventListener("click", () => {
   smoothScroll(".about", 1000);
 });
 projects.addEventListener("click", () => {
   smoothScroll(".projects", 1000);
+  setTimeout(() => {}, 1000);
 });
 home.addEventListener("click", () => {
   smoothScroll(".hero", 1000);
 });
+// ---
+
+// Projects - hover effect
+const projects_array = document.querySelectorAll(".project");
+const covers_array = document.querySelectorAll(".cover");
+const img_array = document.querySelectorAll(".project_img");
+const info_array = document.querySelectorAll(".info");
+
+projects_array.forEach((el, i) => {
+  el.addEventListener("mouseover", () => {
+    covers_array[i].style.transform = "translate(0, 0)";
+    img_array[i].style.transform = "scale(1.03)";
+  });
+  el.addEventListener("mouseout", () => {
+    covers_array[i].style.transform = "translate(-500px, 0)";
+    img_array[i].style.transform = "scale(1)";
+    info_array[i].style.transform = "scale(1)";
+  });
+});
+// ---
+
+// Projects - isInViewport
+const isInViewport_projects = (el) => {
+  const rect = el.getBoundingClientRect();
+  return rect.top + 200 <= window.innerHeight;
+};
+
+const project_check = () => {
+  projects_array.forEach((el, i) => {
+    if (isInViewport_projects(el)) {
+      setTimeout(() => {
+        el.style.transform = "translate(0,0)";
+        el.style.opacity = "1";
+      }, 400);
+    }
+  });
+};
+
+window.addEventListener("scroll", project_check);
 // ---
