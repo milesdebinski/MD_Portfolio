@@ -6,14 +6,16 @@
   --icon-hover-color: #65f2ffe5;
   --neon-color: rgb(255, 255, 255);
   --neon-shadow-color: rgba(255, 255, 255, 0.466);
+  --underline-color: rgb(208, 233, 232);
 
+  /* --underline-shadow: 0px 0px 2px 1px #fff; */
   --navbar-shadow: 4px;
   /* Main colors */
   --primary-color: rgb(14, 82, 109);
   --secondary-color: rgb(49, 192, 218);
 
   --dark-color: rgb(33, 46, 54);
-  --dark-second-color: rgb(38, 54, 63);
+  --dark-second-color: #26363f;
   --bright-color: #fff;
   --gray-color: #bfc9ca;
 }
@@ -72,9 +74,8 @@ li {
   justify-content: center;
   align-items: center;
   background: #000;
-  overflow-x: hidden;
+  overflow: hidden;
   z-index: 0;
-  overflow-y: hidden;
 }
 .videoBG {
   position: absolute;
@@ -196,10 +197,12 @@ li {
 .navbar {
   width: 100%;
   height: 90px;
-  position: absolute;
-  /* background: rgba(33, 46, 54, 0.6); */
+  position: fixed;
+  background: rgba(33, 46, 54, 0.5);
   /* border-bottom: 1px rgba(255, 255, 255, 0.2) solid; */
+  transform: translate(0, 0px);
   z-index: 4;
+  transition: 550ms ease-in-out;
 }
 .navbar .flex_navbar {
   display: flex;
@@ -212,17 +215,18 @@ li {
   justify-content: flex-end;
   align-items: center;
   font-weight: 500;
-  font-size: 22px;
+  font-size: 24px;
   font-family: "Work Sans", sans-serif;
-  text-shadow: 0px 0px 3px #fff;
+
+  /* font-family: "roboto", sans-serif; */
+  /* text-shadow: 0px 0px 3px #fff; */
 }
 .navbar img {
   flex: 1;
   width: 70px;
   height: auto;
   max-width: 70px;
-
-  /* justify-self: flex-start; */
+  cursor: pointer;
 }
 .navbar ul li {
   transition: 150ms ease-in-out;
@@ -231,32 +235,23 @@ li {
   justify-content: center;
   align-items: center;
 }
-.navbar ul li .under {
-  margin-top: -4px;
-  align-self: flex-end;
-  position: relative;
-  width: 0%;
-  height: 3px;
-  border-radius: 10px;
-  background: #fff;
-  transition: 150ms ease-in-out;
-  z-index: -1;
-}
-.navbar ul li .under:hover {
-  width: 100%;
-}
+
 .navbar ul li a {
-  /* padding: 5px; */
   margin: 0 20px;
-  /* border: 1px solid red; */
   overflow: hidden;
+  color: var(--underline-color);
+  /* text-shadow: 0px 0px 3px #000; */
+  transition: 200ms ease-in-out;
 }
-.navbar ul li:hover,
-.navbar ul li.current {
-  text-shadow: -1px -1px var(--navbar-shadow) var(--hover-navbar-color),
+.navbar ul li a:hover,
+.navbar ul li a.current {
+  color: rgb(255, 255, 255);
+  text-shadow: 0px 0px 0px var(--underline-color);
+
+  /* text-shadow: -1px -1px var(--navbar-shadow) var(--hover-navbar-color),
     1px -1px var(--navbar-shadow) var(--hover-navbar-color),
     -1px 1px var(--navbar-shadow) var(--hover-navbar-color),
-    1px 1px var(--navbar-shadow) var(--hover-navbar-color);
+    1px 1px var(--navbar-shadow) var(--hover-navbar-color); */
 }
 /* --- */
 /* Parallax Icons */
@@ -413,15 +408,20 @@ i.react {
 /* --- */
 /* PROJECTS */
 .projects {
+  border-bottom: 1px rgba(255, 255, 255, 0.288) solid;
+  border-top: 1px rgba(255, 255, 255, 0.288) solid;
+  padding: 100px 0px;
   /* background: var(--gray-color); */
-  background-color: var(--dark-second-color);
-  padding: 170px 0;
+  /* background-color: var(--dark-second-color); */
+  background-color: #26363f;
+  background-image: url("https://www.transparenttextures.com/patterns/triangles.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
   text-align: center;
 }
 .projects h2 {
 }
 .flex_projects {
-  padding: 40px 0;
+  padding-top: 20px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -527,8 +527,6 @@ i.react {
   font-weight: 500;
   line-height: 1.2;
   text-shadow: 0px 0px 2px rgb(73, 228, 255), 0px 0px 3px rgb(0, 0, 0);
-
-  /* text-shadow: none; */
 }
 .projects .flex_projects .project .info p {
   font-style: italic;
@@ -543,15 +541,7 @@ footer {
   background: var(--dark-color);
   padding: 60px 0;
 }
-footer img {
-  width: 170px;
-  /* margin: 15px; */
-}
-footer p {
-  font-size: 16px;
-  font-family: "Work Sans", sans-serif;
-  font-weight: 300;
-}
+
 footer .flex_footer {
   display: flex;
   flex-direction: column;
@@ -559,7 +549,26 @@ footer .flex_footer {
   align-items: center;
   padding: 10px;
 }
-footer .flex_footer .social_footer {
+footer .flex_footer .logo_footer {
+  display: flex;
+  justify-content: center;
+}
+footer img {
+  width: 170px;
+  cursor: pointer;
+}
+footer i {
+  position: absolute;
+  transform: translate(0, -30px);
+  opacity: 0;
+  transition: 250ms ease-in-out;
+}
+footer p {
+  font-size: 16px;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+}
+footer .flex_footer .social_footer ul {
   font-family: "Work Sans", sans-serif;
   display: flex;
   justify-content: space-around;
@@ -567,5 +576,19 @@ footer .flex_footer .social_footer {
   width: 600px;
   font-size: 18px;
   font-weight: 600;
-  padding: 60px 0;
+  margin: 60px 0;
+}
+footer .flex_footer .social_footer ul li {
+  overflow: hidden;
+  line-height: 1.5;
+}
+footer .flex_footer .social_footer ul li a {
+  color: var(--underline-color);
+  transition: 250ms ease-in-out;
+}
+footer .flex_footer .social_footer ul li a:hover {
+  color: #fff;
+}
+footer .flex_footer .social_footer ul li a .under {
+  height: 2px;
 }

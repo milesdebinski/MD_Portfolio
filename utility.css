@@ -49,3 +49,15 @@
   background: var(--icon-hover-color);
   color: var(--dark-color);
 }
+.under {
+  margin-top: -4px;
+  align-self: flex-end;
+  position: relative;
+  width: 0%;
+  height: 3px;
+  margin-bottom: 2px;
+  border-radius: 10px;
+  background: var(--underline-color);
+  box-shadow: var(--underline-shadow);
+  transition: 150ms ease-in-out;
+}

@@ -150,12 +150,14 @@ window.addEventListener("load", run);
 window.addEventListener("resize", run);
 isInViewport_skills();
 // ---
-// Hide header on scroll
+// Hide header on scroll (add overlay gradient)
 const overlay = document.querySelector(".overlay");
+const navbar = document.querySelector(".navbar");
 let lastScrollTop = 0;
 window.addEventListener("scroll", () => {
   let st = window.pageYOffset;
   if (st < lastScrollTop) {
+    // hide header
     overlay.style.background = `linear-gradient(
       0deg,
       rgba(33, 46, 54, ${st / 800}) 0%,
@@ -171,20 +173,25 @@ window.addEventListener("scroll", () => {
   lastScrollTop = st;
 });
 // ---
+// show navbar when mouse hight
+window.addEventListener("mousemove", (el) => {
+  if (el.screenY < 180) {
+    console.log(el.screenY);
+    navbar.style.transform = "translate(0, 0px)";
+  } else {
+    navbar.style.transform = "translate(0, -100px)";
+  }
+  // console.log(el.screenY);
+});
 
 // Smooth Scrolling
 function smoothScroll(target, duration) {
   const section = document.querySelector(target);
   const sectionPosition = section.getBoundingClientRect().top;
   const startPosition = window.pageYOffset;
-  const distance = sectionPosition - startPosition;
+  // const distance = sectionPosition - startPosition;
 
   let startTime = null;
-  console.log(`
-  sectionPosition=${sectionPosition},
-  startPosition=${startPosition},
-  distance=${distance},`);
-
   // easing functions - http://gizma.com/easing/
   function animationScroll(currentTime) {
     if (startTime === null) startTime = currentTime;
@@ -205,6 +212,7 @@ function smoothScroll(target, duration) {
 }
 
 const home = document.getElementById("nav_home");
+const home_bottom = document.getElementById("nav_home_bottom");
 const about = document.getElementById("nav_about");
 const projects = document.getElementById("nav_projects");
 const contact = document.getElementById("nav_contact");
@@ -219,6 +227,9 @@ projects.addEventListener("click", () => {
 home.addEventListener("click", () => {
   smoothScroll(".hero", 1000);
 });
+home_bottom.addEventListener("click", () => {
+  smoothScroll(".hero", 1000);
+});
 // ---
 
 // Projects - hover effect
@@ -230,8 +241,6 @@ const show_box_array = document.querySelectorAll(".show_box");
 let project_up = false;
 projects_array.forEach((el, i) => {
   el.addEventListener("mouseover", () => {
-    console.log("up");
-
     covers_array[i].style.transform = "translate(0, 0)";
     img_array[i].style.transform = "scale(1.03)";
     info_array[i].style.transition = "600ms";
@@ -244,8 +253,6 @@ projects_array.forEach((el, i) => {
   });
 
   el.addEventListener("mouseout", () => {
-    console.log("down");
-
     covers_array[i].style.transform = "translate(-500px, 0)";
     img_array[i].style.transform = "scale(1)";
 
@@ -284,22 +291,37 @@ window.addEventListener("resize", project_check);
 // Hover effect Navbar & Footer
 const under_text = document.querySelectorAll(".under_text");
 const under = document.querySelectorAll(".under");
-console.log(under_text);
-console.log(under);
+
 under_text.forEach((el, i) => {
   el.addEventListener("mouseover", () => {
-    under[i].style.background = "var(--icon-hover-color)";
-    under[i].style.transition = "220ms ease-in-out";
+    under[i].style.background = "#fff";
+    under[i].style.transition = "320ms ease-in-out";
     under[i].style.width = "100%";
   });
 
   el.addEventListener("mouseout", () => {
-    under[i].style.background = "#fff";
-    under[i].style.transform = "translate(100px,0)";
-    under[i].style.width = "0%";
+    under[i].style.background = "var(--underline-color)";
     setTimeout(() => {
-      under[i].style.transition = "0ms ease-in-out";
-      under[i].style.transform = "translate(0,0)";
-    }, 460);
+      under[i].style.transform = "translate(100px,0)";
+      under[i].style.width = "0%";
+      setTimeout(() => {
+        under[i].style.transition = "0ms ease-in-out";
+        under[i].style.transform = "translate(0,0)";
+      }, 460);
+    }, 200);
   });
 });
+
+// Arrow to the top - footer
+const arrow_top = document.querySelector(".arrow_top");
+const logo_footer = document.querySelector(".logo_footer");
+
+logo_footer.addEventListener("mouseover", () => {
+  arrow_top.style.transform = "translate(0, -52px)";
+  arrow_top.style.opacity = "1";
+});
+logo_footer.addEventListener("mouseout", () => {
+  arrow_top.style.transform = "translate(0, -30px)";
+  arrow_top.style.opacity = "0";
+});
+// ---
