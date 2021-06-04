@@ -167,12 +167,18 @@ window.addEventListener("scroll", () => {
       rgba(33, 46, 54, ${st / 800}) 0%,
       rgba(33, 46, 54, ${st / 1000}) 70%
     )`;
+    navbar.style.transform = "translate(0, -100px)";
+    // Show navbar when on Top
+    if (window.pageYOffset < 100) {
+      navbar.style.transform = "translate(0, 0)";
+    }
   } else {
     overlay.style.background = `linear-gradient(
       0deg,
       rgba(33, 46, 54, ${st / 800}) 0%,
       rgba(33, 46, 54, ${st / 1000}) 70%
     )`;
+    navbar.style.transform = "translate(0, -100px)";
   }
   lastScrollTop = st;
 });
@@ -181,7 +187,7 @@ window.addEventListener("scroll", () => {
 window.addEventListener("mousemove", (el) => {
   if (el.screenY < 180) {
     navbar.style.transform = "translate(0, 0px)";
-  } else {
+  } else if (el.screenY > 300 && window.pageYOffset > 100) {
     navbar.style.transform = "translate(0, -100px)";
   }
 });
