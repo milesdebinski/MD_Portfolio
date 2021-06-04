@@ -40,7 +40,6 @@ const turnOnNeons_Stars = (starsArray) => {
   }, 4000);
 };
 // --
-// Sort letters
 
 // --
 const turnOnNeons_MD = () => {
@@ -84,7 +83,7 @@ const startWhenLoaded = () => {
   }, 4000);
   turnOnNeons_MD();
   turnOnNeons_FWD();
-  // sortName();
+
   // turnOnNeons_about();
 };
 // run after load (good for old devices)
@@ -356,3 +355,12 @@ logo_footer.addEventListener("mouseout", () => {
   arrow_top.style.opacity = "0";
 });
 // ---
+// Parallax Image About
+
+window.addEventListener("scroll", () => {
+  const parallax_bg = document.querySelector(".parallax_bg");
+  let scrollPosition = window.pageYOffset;
+  console.log(window.pageYOffset);
+
+  parallax_bg.style.transform = `translateY(${scrollPosition * 0.5 - 430}px)`;
+});

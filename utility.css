@@ -39,7 +39,6 @@
 .btn {
   padding: 5px 10px;
   border-radius: 4px;
-  margin: 0 50px;
   background: var(--dark-color);
   border: 1px rgba(255, 255, 255, 0.336) solid;
   box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.315);
@@ -61,44 +60,3 @@
   box-shadow: var(--underline-shadow);
   transition: 150ms ease-in-out;
 }
-/* MESS */
-/* 
-#neon_md:nth-child(1) {
-  transform: translate(0px, 90px) rotate(20deg);
-}
-#neon_md:nth-child(2) {
-  transform: translate(0px, -90px) rotate(-40deg);
-}
-#neon_md:nth-child(3) {
-  transform: translate(-0px, 90px) rotate(120deg);
-}
-#neon_md:nth-child(4) {
-  transform: translate(-0px, -90px) rotate(120deg);
-}
-#neon_md:nth-child(5) {
-  transform: translate(0px, 90px) rotate(120deg);
-}
-#neon_md:nth-child(6) {
-  transform: translate(0px, -90px) rotate(120deg);
-}
-#neon_md:nth-child(7) {
-  transform: translate(0px, 90px) rotate(120deg);
-}
-#neon_md:nth-child(8) {
-  transform: translate(0px, -90px) rotate(120deg);
-}
-#neon_md:nth-child(9) {
-  transform: translate(-0px, 90px) rotate(120deg);
-}
-#neon_md:nth-child(10) {
-  transform: translate(-0px, -90px) rotate(120deg);
-}
-#neon_md:nth-child(11) {
-  transform: translate(0px, 90px) rotate(120deg);
-}
-#neon_md:nth-child(12) {
-  transform: translate(-0px, -90px) rotate(120deg);
-}
-#neon_md:nth-child(13) {
-  transform: translate(0px, 90px) rotate(120deg);
-} */
