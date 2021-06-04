@@ -40,6 +40,9 @@ const turnOnNeons_Stars = (starsArray) => {
   }, 4000);
 };
 // --
+// Sort letters
+
+// --
 const turnOnNeons_MD = () => {
   neons_MD.forEach((el, i) => {
     // On
@@ -81,6 +84,7 @@ const startWhenLoaded = () => {
   }, 4000);
   turnOnNeons_MD();
   turnOnNeons_FWD();
+  // sortName();
   // turnOnNeons_about();
 };
 // run after load (good for old devices)
@@ -176,12 +180,10 @@ window.addEventListener("scroll", () => {
 // show navbar when mouse hight
 window.addEventListener("mousemove", (el) => {
   if (el.screenY < 180) {
-    console.log(el.screenY);
     navbar.style.transform = "translate(0, 0px)";
   } else {
     navbar.style.transform = "translate(0, -100px)";
   }
-  // console.log(el.screenY);
 });
 
 // Smooth Scrolling
@@ -216,6 +218,8 @@ const home_bottom = document.getElementById("nav_home_bottom");
 const about = document.getElementById("nav_about");
 const projects = document.getElementById("nav_projects");
 const contact = document.getElementById("nav_contact");
+const contact_form = document.getElementById("contact_form");
+const svg_logo = document.querySelectorAll(".svg_logo");
 
 about.addEventListener("click", () => {
   smoothScroll(".about", 1000);
@@ -230,7 +234,28 @@ home.addEventListener("click", () => {
 home_bottom.addEventListener("click", () => {
   smoothScroll(".hero", 1000);
 });
+let contact_displayed = false;
+contact.addEventListener("click", () => {
+  if (!contact_displayed) {
+    contact_form.classList.add("show");
+    contact_displayed = true;
+  } else if (contact_displayed) {
+    contact_form.classList.remove("show");
+    contact_displayed = false;
+  }
+});
 // ---
+// Effect on hover over SVG logo
+home.addEventListener("mouseover", () => {
+  svg_logo.forEach((el) => {
+    el.style.fill = "var(--underline-color)";
+  });
+});
+home.addEventListener("mouseout", () => {
+  svg_logo.forEach((el) => {
+    el.style.fill = "#fff";
+  });
+});
 
 // Projects - hover effect
 const projects_array = document.querySelectorAll(".project");
