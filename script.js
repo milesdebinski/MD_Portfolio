@@ -157,6 +157,7 @@ isInViewport_skills();
 const overlay = document.querySelector(".overlay");
 const navbar = document.querySelector(".navbar");
 let lastScrollTop = 0;
+let test = true;
 window.addEventListener("scroll", () => {
   let st = window.pageYOffset;
   if (st < lastScrollTop) {
@@ -168,6 +169,7 @@ window.addEventListener("scroll", () => {
       rgba(33, 46, 54, ${st / 1300}) 90%
     )`;
     navbar.style.transform = "translate(0, -100px)";
+
     // Show navbar when on Top
     if (window.pageYOffset < 100) {
       navbar.style.transform = "translate(0, 0)";
@@ -181,6 +183,7 @@ window.addEventListener("scroll", () => {
     )`;
     navbar.style.transform = "translate(0, -100px)";
   }
+
   lastScrollTop = st;
 });
 // ---
@@ -241,6 +244,7 @@ home.addEventListener("click", () => {
 home_bottom.addEventListener("click", () => {
   smoothScroll(".hero", 1000);
 });
+
 let contact_displayed = false;
 contact.addEventListener("click", () => {
   if (!contact_displayed) {
@@ -362,7 +366,6 @@ logo_footer.addEventListener("mouseout", () => {
 window.addEventListener("scroll", () => {
   const parallax_bg = document.querySelector(".parallax_bg");
   let scrollPosition = window.pageYOffset;
-  console.log(window.pageYOffset);
 
   parallax_bg.style.transform = `translateY(${scrollPosition * 0.5 - 430}px)`;
 });
