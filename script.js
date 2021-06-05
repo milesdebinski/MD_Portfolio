@@ -163,8 +163,9 @@ window.addEventListener("scroll", () => {
     // hide header
     overlay.style.background = `linear-gradient(
       0deg,
-      rgba(33, 46, 54, ${st / 800}) 0%,
-      rgba(33, 46, 54, ${st / 1000}) 70%
+      rgba(33, 46, 54, ${st / 500}) 10%,
+      rgba(33, 46, 54, ${st / 1000})50%,
+      rgba(33, 46, 54, ${st / 1300}) 90%
     )`;
     navbar.style.transform = "translate(0, -100px)";
     // Show navbar when on Top
@@ -174,8 +175,9 @@ window.addEventListener("scroll", () => {
   } else {
     overlay.style.background = `linear-gradient(
       0deg,
-      rgba(33, 46, 54, ${st / 800}) 0%,
-      rgba(33, 46, 54, ${st / 1000}) 70%
+      rgba(33, 46, 54, ${st / 500}) 10%,
+      rgba(33, 46, 54, ${st / 1000})50%,
+      rgba(33, 46, 54, ${st / 1300})90%
     )`;
     navbar.style.transform = "translate(0, -100px)";
   }

@@ -263,32 +263,32 @@ li {
 /* Parallax Icons */
 .parallax_icons {
   position: absolute;
-  color: rgba(165, 206, 216, 0.308);
-  text-shadow: 0px 0px 20px rgba(0, 225, 255, 0.479);
+  color: rgba(165, 206, 216, 0.09);
+  text-shadow: 0px 0px 20px rgba(0, 225, 255, 0.09);
   display: flex;
-  z-index: 3;
+  z-index: 2;
   top: -20%;
   left: 0%;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .parallax_icons * {
   position: relative;
 }
 .parallax_icons i:nth-child(1) {
-  top: 19%;
+  top: 15%;
   left: 56%;
 
   /* color: #efd81d; */
 }
 .parallax_icons i:nth-child(2) {
   top: 80%;
-  left: 95%;
+  left: 92%;
   /* color: #dd4d25; */
 }
 .parallax_icons i:nth-child(3) {
-  top: 70%;
+  top: 65%;
   left: 0%;
   /* color: #57d3f5; */
 }
@@ -344,6 +344,7 @@ li {
   background: rgba(18, 25, 29, 0.425);
   border-radius: 5px;
   padding: 20px;
+  margin-left: 30px;
 }
 
 .about .text p {
@@ -356,7 +357,8 @@ li {
   padding: 0 30px;
   /* border: 1px rgba(255, 255, 255, 0.349) solid; */
   /* background: rgba(0, 225, 255, 0.034); */
-  /* border-radius: 50%; */
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.418); */
+  /* border-radius: 34%; */
   z-index: 2;
 }
 
@@ -365,7 +367,7 @@ li {
   text-align: center;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  border-top: 1px solid rgba(34, 126, 138, 0.432);
+  border-top: 1px solid rgba(91, 122, 126, 0.295);
   /* border-top: 10px solid
     linear-gradient(0.75turn, var(--dark-color), rgba(33, 46, 54, 0.79)); */
 
