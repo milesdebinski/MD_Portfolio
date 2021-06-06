@@ -685,34 +685,39 @@ i.react {
   align-items: flex-start;
   width: 100%;
   height: auto;
+  overflow: hidden;
+}
+.contact .flex_contact .form .form_group .under {
+  position: relative;
+  top: 2px;
+  height: 2px;
 }
 
 .contact .flex_contact .form .form_group label {
   letter-spacing: 2px;
 }
 
-.contact .flex_contact .form .form_group input {
+.contact .flex_contact .form .form_group .input {
   font-family: "Times New Roman", Times, serif;
   color: #ddd;
   width: 100%;
   border: none;
   background: rgb(18, 30, 37);
-  border-bottom: 1px solid #fff;
+  border-bottom: 2px solid #bbb;
   padding: 8px 0;
   font-weight: 50;
   font-size: 18px;
 }
-.contact .flex_contact .form .form_group input.text {
-  height: 150px;
-  resize: horizontal;
-  overflow: auto;
-  margin-bottom: 10px;
-}
-
 .contact .flex_contact .form .form_group input:focus {
   outline: none;
+  border-bottom: 2px solid #fff;
+}
 
-  /* box-shadow: 0px 0px 0px 1px #000; */
+.contact .flex_contact .form .form_group input.text {
+  height: 150px;
+  resize: both;
+  overflow: auto;
+  /* margin-bottom: 10px; */
 }
 
 /* --- */
