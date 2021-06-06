@@ -162,25 +162,28 @@ window.addEventListener("scroll", () => {
   let st = window.pageYOffset;
   if (st < lastScrollTop) {
     // hide header
-    overlay.style.background = `linear-gradient(
-      0deg,
-      rgba(33, 46, 54, ${st / 500}) 10%,
-      rgba(33, 46, 54, ${st / 1000})50%,
-      rgba(33, 46, 54, ${st / 1300}) 90%
-    )`;
-    navbar.style.transform = "translate(0, -100px)";
+    // overlay.style.background = `linear-gradient(
+    //   0deg,
+    //   rgba(33, 46, 54, ${st / 300}) 0%,
+    //   rgba(33, 46, 54, ${st / 700})20%
+    // )`;
+    navbar.style.transform = "translate(0, 0px)";
 
     // Show navbar when on Top
     if (window.pageYOffset < 100) {
       navbar.style.transform = "translate(0, 0)";
+    } else {
+      // autohide navbar after 3s (after scroll up)
+      setTimeout(() => {
+        navbar.style.transform = "translate(0, -100px)";
+      }, 3000);
     }
   } else {
-    overlay.style.background = `linear-gradient(
-      0deg,
-      rgba(33, 46, 54, ${st / 500}) 10%,
-      rgba(33, 46, 54, ${st / 1000})50%,
-      rgba(33, 46, 54, ${st / 1300})90%
-    )`;
+    // overlay.style.background = `linear-gradient(
+    //   0deg,
+    //   rgba(33, 46, 54, ${st / 300}) 0%,
+    //   rgba(33, 46, 54, ${st / 700})20%
+    // )`;
     navbar.style.transform = "translate(0, -100px)";
   }
 
@@ -188,10 +191,11 @@ window.addEventListener("scroll", () => {
 });
 // ---
 // show navbar when mouse hight
+
 window.addEventListener("mousemove", (el) => {
-  if (el.screenY < 180) {
+  if (el.screenY < 280) {
     navbar.style.transform = "translate(0, 0px)";
-  } else if (el.screenY > 300 && window.pageYOffset > 100) {
+  } else if (el.screenY > 780 && window.pageYOffset > 100) {
     navbar.style.transform = "translate(0, -100px)";
   }
 });
@@ -367,5 +371,5 @@ window.addEventListener("scroll", () => {
   const parallax_bg = document.querySelector(".parallax_bg");
   let scrollPosition = window.pageYOffset;
 
-  parallax_bg.style.transform = `translateY(${scrollPosition * 0.5 - 430}px)`;
+  parallax_bg.style.transform = `translateY(${scrollPosition * 0.5 - 510}px)`;
 });

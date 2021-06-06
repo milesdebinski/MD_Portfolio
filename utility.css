@@ -41,16 +41,15 @@
   font-size: 18px;
   border-radius: 3px;
 
-  /* background: var(--dark-color); */
-  /* background: rgb(35, 56, 65); */
   background: linear-gradient(0.25turn, rgb(6, 106, 124), rgb(16, 67, 97));
-  /* border: 1px rgba(255, 255, 255, 0.767) solid; */
+
   box-shadow: 0px 0px 5px 2px rgba(11, 33, 37, 0.515);
-  transition: 150ms ease-in-out;
+  transition: 350ms ease-in-out;
 }
 .btn:hover {
-  background: var(--icon-hover-color);
-  color: var(--dark-color);
+  /* background: var(--icon-hover-color); */
+  background: linear-gradient(0.25turn, rgb(16, 67, 97), rgb(6, 106, 124));
+  /* color: var(--dark-color); */
 }
 .under {
   margin-top: -4px;
