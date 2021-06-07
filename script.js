@@ -172,11 +172,6 @@ window.addEventListener("scroll", () => {
     // Show navbar when on Top
     if (window.pageYOffset < 100) {
       navbar.style.transform = "translate(0, 0)";
-    } else {
-      // autohide navbar after 3s (after scroll up)
-      setTimeout(() => {
-        navbar.style.transform = "translate(0, -100px)";
-      }, 3000);
     }
   } else {
     // overlay.style.background = `linear-gradient(
@@ -190,12 +185,11 @@ window.addEventListener("scroll", () => {
   lastScrollTop = st;
 });
 // ---
-// show navbar when mouse hight
-
+// show/hide navbar when mouse hight/low
 window.addEventListener("mousemove", (el) => {
   if (el.screenY < 280) {
     navbar.style.transform = "translate(0, 0px)";
-  } else if (el.screenY > 780 && window.pageYOffset > 100) {
+  } else if (el.screenY > 380 && window.pageYOffset > 100) {
     navbar.style.transform = "translate(0, -100px)";
   }
 });
@@ -249,16 +243,6 @@ home_bottom.addEventListener("click", () => {
   smoothScroll(".hero", 1000);
 });
 
-let contact_displayed = false;
-contact.addEventListener("click", () => {
-  if (!contact_displayed) {
-    contact_form.classList.add("show");
-    contact_displayed = true;
-  } else if (contact_displayed) {
-    contact_form.classList.remove("show");
-    contact_displayed = false;
-  }
-});
 // ---
 // Effect on hover over SVG logo
 home.addEventListener("mouseover", () => {
@@ -284,7 +268,7 @@ projects_array.forEach((el, i) => {
     covers_array[i].style.transform = "translate(0, 0)";
     img_array[i].style.transform = "scale(1.03)";
     info_array[i].style.transition = "600ms";
-    info_array[i].style.transform = "translate(0,-160px)";
+    info_array[i].style.transform = "translate(0,-140px)";
 
     setTimeout(() => {
       show_box_array[i].style.opacity = "1";
@@ -331,24 +315,35 @@ window.addEventListener("resize", project_check);
 // Hover effect Navbar & Footer
 const under_text = document.querySelectorAll(".under_text");
 const under = document.querySelectorAll(".under");
-
+const under2 = document.querySelectorAll(".under2");
 under_text.forEach((el, i) => {
+  let divWidth = el.offsetWidth;
   el.addEventListener("mouseover", () => {
-    under[i].style.background = "#fff";
-    under[i].style.transition = "320ms ease-in-out";
-    under[i].style.width = "100%";
+    under[i].style.transform = `translate(-${divWidth}px, 0)`;
+    under2[i].style.transform = `translate(-${divWidth}px, 0)`;
+    under[i].style.transition = `0ms ease-out `;
+    under2[i].style.transition = `0ms ease-out `;
+
+    setTimeout(() => {
+      under[i].style.background = "#fff";
+      under[i].style.transition = `200ms ease-out `;
+      under[i].style.transform = "translate(0, 0)";
+      under2[i].style.background = "var(--underline-color)";
+      under2[i].style.transition = `250ms ease-out`;
+    }, 30);
   });
 
   el.addEventListener("mouseout", () => {
-    under[i].style.background = "var(--underline-color)";
+    under2[i].style.transition = `260ms ease-out`;
+    under2[i].style.transform = "translate(0px, 0)";
+
     setTimeout(() => {
-      under[i].style.transform = "translate(100px,0)";
-      under[i].style.width = "0%";
+      under[i].style.transform = `translate(${divWidth}px, 0)
+        `;
       setTimeout(() => {
-        under[i].style.transition = "0ms ease-in-out";
-        under[i].style.transform = "translate(0,0)";
-      }, 460);
-    }, 200);
+        under[i].style.transition = `0ms ease-out `;
+      }, 15);
+    }, 250);
   });
 });
 
@@ -357,11 +352,11 @@ const arrow_top = document.querySelector(".arrow_top");
 const logo_footer = document.querySelector(".logo_footer");
 
 logo_footer.addEventListener("mouseover", () => {
-  arrow_top.style.transform = "translate(0, -52px)";
+  arrow_top.style.transform = "translate(0, -30px)";
   arrow_top.style.opacity = "1";
 });
 logo_footer.addEventListener("mouseout", () => {
-  arrow_top.style.transform = "translate(0, -30px)";
+  arrow_top.style.transform = "translate(0, 0px)";
   arrow_top.style.opacity = "0";
 });
 // ---
@@ -372,4 +367,56 @@ window.addEventListener("scroll", () => {
   let scrollPosition = window.pageYOffset;
 
   parallax_bg.style.transform = `translateY(${scrollPosition * 0.5 - 510}px)`;
+});
+// contact open / close
+const contact_info = document.querySelector(".contact_info");
+const form = document.querySelector(".form");
+const closeGroup = document.querySelector(".close");
+const xButton = document.querySelectorAll(".x");
+
+contact.addEventListener("click", () => {
+  contact_form.classList.add("show");
+  contact_info.classList.add("show");
+  form.classList.add("show");
+});
+// close X button
+closeGroup.addEventListener("click", () => {
+  contact_form.classList.remove("show");
+  contact_info.classList.remove("show");
+  form.classList.remove("show");
+});
+
+closeGroup.addEventListener("mouseover", () => {
+  xButton.forEach((el) => {
+    el.style.background = "var(--underline-color)";
+    xButton[0].style.transform = "rotate(-135deg)";
+    xButton[1].style.transform = "rotate(-45deg)";
+  });
+});
+closeGroup.addEventListener("mouseout", () => {
+  xButton.forEach((el) => {
+    el.style.background = "#fff";
+    xButton[0].style.transform = "rotate(45deg)";
+    xButton[1].style.transform = "rotate(135deg)";
+  });
+});
+
+// Contact - icons interaction
+const contact_icons = document.querySelectorAll("#contact_icon");
+const contact_texts = document.querySelectorAll("#contact_text");
+
+contact_icons.forEach((el, i) => {
+  el.addEventListener("mouseover", () => {
+    if (i == 0) el.style.color = "var(--icon-one)";
+    if (i == 1) el.style.color = "var(--icon-two)";
+    if (i == 2) el.style.color = "var(--icon-three)";
+    if (i == 3) el.style.color = "var(--icon-four)";
+
+    contact_texts[i].classList.add("show");
+  });
+
+  el.addEventListener("mouseout", () => {
+    contact_texts[i].classList.remove("show");
+    el.style.color = "var(--dark-color)";
+  });
 });

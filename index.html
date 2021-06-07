@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="media.css">
 
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
-    <script src="script.js" defer></script>
     <title>Miles Debinski</title>
   </head>
   <body>
@@ -33,15 +32,16 @@
                 <!-- <li id="nav_home"><a href="#home">HOME</a></li> -->
 
                 <li><a class="under_text" id="nav_about">About<div
-                      class="under"></div></a>
+                      class="under"><div class="under2"></div></div>
+                  </a>
                 </li>
                 <li><a class="under_text" id="nav_projects"">Projects<div
-                      class="under"></div></a>
+                      class="under"><div class="under2"></div></div></a>
                 </li>
                 <li><a class="under_text" id="nav_cv"">CV<div
-                      class="under"></div></a></li>
+                      class="under"><div class="under2"></div></div></a></li>
                 <li><a class="under_text" id="nav_contact"">Contact<div
-                      class="under"></div></a></li>
+                      class="under"><div class="under2"></div></div></a></li>
               </ul>
             </div>
           </div>
@@ -103,33 +103,41 @@
               <div class="text">
                 <h3>My Coding Story</h3>
                 <p>
-                  I'm Miles, a Manchester based homebody and free spirit. I
+                  I'm Miles, a <span>Manchester</span> based homebody and free
+                  spirit. I
                   love to immerse
                   myself in the depths of code into the late hours of night,
                   forgetting about the real world.
                   <br><br>
-                  I enjoy resolving programming problems & designing captivating
+                  I enjoy resolving <span>programming</span> problems &
+                  designing captivating
                   user interfaces in order to develop rich web experiences. I
-                  like to be faced with a challenge to learn new skills
+                  like to be faced with a <span>challenge</span> to learn new
+                  skills
                   during the development of projects.
                   <br><br>
                   Recently I've gained valuable experience while creating
-                  several websites as a freelancer, meeting each of the client's
-                  unique end objectives and design requirements. I've also been
-                  programming mods/minigames in Javascript, for a private server
+                  several websites as a <span>freelancer</span>, meeting each of
+                  the client's
+                  unique end objectives and <span>design</span> requirements.
+                  I've also been
+                  programming mods/minigames in <span>Javascript</span>, for a
+                  private server
                   in GTA Online
                   giving players additional challenges, adding more fun to
                   gameplay and making the server unique. I'm
                   currently
-                  building up my knowledge in Typescript and React.js.
+                  building up my knowledge in <span>Typescript</span> and <span>React.js</span>.
                   <br><br>
-                  As well as being a self-taught programmer I graduated from IT
+                  As well as being a <span>self-taught</span> programmer I
+                  graduated from IT
                   college in 2011 where I learnt the
                   fundamentals
                   of programming languages and computer science.
                   <br><br>
                   I am looking forward to expanding my career in web development
-                  and I'm highly interested in learning back end technologies in
+                  and I'm highly interested in learning <span>backend</span>
+                  technologies in
                   the
                   near future.</p>
               </div>
@@ -188,7 +196,7 @@
 
               <div class="skill">
                 <i class="react fab fa-react fa-2x"></i>
-                <h3>React</h3>
+                <h3>React.js</h3>
                 <div class="stars">
                   <i id="r_star" class="rf_star fas fa-star"></i>
                   <i id="r_star" class="rf_star fas fa-star"></i>
@@ -199,7 +207,7 @@
               </div>
               <div class="skill">
                 <i class="node fab fa-node fa-2x"></i>
-                <h3>Node</h3>
+                <h3>Node.js</h3>
                 <div class="stars">
                   <i id="n_star" class="nf_star fas fa-star"></i>
                   <i id="n_star" class="far fa-star"></i>
@@ -228,7 +236,8 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Culpa, maiores! Lorem ipsum dolor sit amet, consectetur
                       adipisicing elit. Nam, cumque?</p>
-                    <div class="buttons"><a href="" class="btn"><i class="fas
+                    <div class="buttons"><a href="" class="btn"><i
+                          class="fas
                           fa-code"></i> code</a>
                       <a href="" class="btn"><i class="far fa-eye"></i> demo</a></div>
                   </div>
@@ -302,6 +311,7 @@
 
 
 
+
                   <!-- and very active person who is daily driven by challenges,
                   always having who likes making fun things with web
                   technologies.
@@ -316,28 +326,50 @@
                   been fascinating journey so far and I can't wait to learn
                   more. -->
                 </p>
+                <div class="icons_contact">
+                  <div class="item"> <i id="contact_icon" class="fas fa-comments
+                      fa-3x"></i> <p id="contact_text">have fun</p>
+                  </div>
+                  <div class="item"><i id="contact_icon" class="fas fa-tasks
+                      fa-3x"></i>
+                    <p id="contact_text">work hard</p></div>
+                  <div class="item"> <i id="contact_icon" class="fas fa-coffee
+                      fa-3x"></i> <p id="contact_text">
+                      coffee</p>
+                  </div>
+                  <div class="item"> <i id="contact_icon" class="fas
+                      fa-redo fa-3x"></i> <p id="contact_text">repeat.</p>
+                  </div>
+
+                  <!-- <i class="fas fa-coffee"></i> -->
+
+                </div>
+
               </div>
               <div class="form">
-
-                <h3>Let's talk.</h3>
+                <div class="flex_close">
+                  <h3>Let's talk.</h3>
+                  <div class="close">
+                    <div class="x one"></div>
+                    <div class="x two"></div>
+                  </div></div>
                 <p>Work opportunities, new projects or just a chinwag. </p>
                 <div class="form_group">
                   <label for="name">Name *</label>
-                  <input type="text" name="name" class="input under_text name">
-                  <div
-                    class="under"></div>
+                  <input type="text" name="name" class="input under_text name"><div
+                    class="under"><div class="under2"></div></div>
                 </div>
                 <div class="form_group">
                   <label for="email">E-mail *</label>
                   <input type="text" name="email" class="input under_text
                     email"><div
-                    class="under"></div>
+                    class="under"><div class="under2"></div></div>
                 </div>
                 <div class="form_group">
                   <label for="text">Message *</label>
 
                   <textarea class="input under_text text"></textarea><div
-                    class="under"></div>
+                    class="under"><div class="under2"></div></div>
                 </div>
                 <a href="" class="btn">Send Message</a>
               </div>
@@ -351,17 +383,22 @@
                 class="logo_footer">
               <i class="arrow_top fas fa-arrow-up"></i>
             </div>
+
             <div class="social_footer">
               <ul>
-                <li><a class="under_text" href="">Github<div class="under"></div></a></li>
-                <li><a class="under_text" href="">Linkedin<div class="under"></div></a></li>
-                <li><a class="under_text" href="">Resume<div class="under"></div></a></li>
-              </ul>
+                <li><a id="github" class="under_text" href="">Github<div
+                      class="under"><div class="under2"></div></div></a></li>
+                <li><a id="linkedin" class="under_text" href="">Linkedin<div
+                      class="under"><div class="under2"></div></div></a></li>
+                <li><a id="resume" class="under_text" href="">Resume<div
+                      class="under"><div class="under2"></div></div></a></li>
+              </div>
+              <p>&#169; 2021 Miles Debinski - contact</p>
             </div>
-            <p>&#169; 2021 Miles Debinski - contact</p>
-          </div>
 
-        </footer>
+          </footer>
 
-      </body>
-    </html>
+          <script src="script.js" defer></script>
+
+        </body>
+      </html>
