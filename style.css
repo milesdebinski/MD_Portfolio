@@ -16,7 +16,7 @@
   /* contact icon colors */
   --icon-one: rgb(50, 148, 161);
   --icon-two: rgb(195, 52, 52);
-  --icon-three: rgb(105, 80, 25);
+  --icon-three: rgb(116, 83, 14);
   --icon-four: rgb(75, 155, 61);
 }
 
@@ -213,7 +213,6 @@ select:-webkit-autofill:focus {
   height: 90px;
   position: fixed;
   background: rgba(33, 46, 54, 0.5);
-  /* border-bottom: 1px rgba(255, 255, 255, 0.2) solid; */
   transform: translate(0, 0px);
   z-index: 4;
   transition: 550ms ease-in-out;
@@ -231,10 +230,6 @@ select:-webkit-autofill:focus {
   font-weight: 400;
   font-size: 24px;
   font-family: "roboto", sans-serif;
-  /* font-family: "Work Sans", sans-serif; */
-
-  /* font-family: "roboto", sans-serif; */
-  /* text-shadow: 0px 0px 3px #fff; */
 }
 .navbar svg {
   flex: 1;
@@ -260,9 +255,7 @@ select:-webkit-autofill:focus {
   margin: 0 20px;
   padding: 5px 0;
   overflow: hidden;
-
   color: var(--light-hover-color);
-  /* text-shadow: 0px 0px 3px #000; */
   transition: 200ms ease-in-out;
 }
 .navbar ul li a:hover,
@@ -304,8 +297,6 @@ select:-webkit-autofill:focus {
 .about {
   position: relative;
   width: 100%;
-  /* background: var(--dark-color); */
-  /* background: url("./img/keyboard3.jpg") no-repeat center center/cover; */
   color: var(--bright-color);
   padding: 140px 0;
   display: flex;
@@ -328,12 +319,7 @@ select:-webkit-autofill:focus {
   left: 0;
   width: 100%;
   height: 100%;
-  /* transform: scale(0.2); */
-  /* background: linear-gradient(var(--dark-color) 5%, rgba(33, 46, 54, 0.8) 50%); */
   background: rgba(33, 46, 54, 0.85);
-  /* background: var(--dark-color); */
-  /* background: url("./img/keyboard2.png") no-repeat center center/cover; */
-  /* opacity: 0.9; */
 }
 .about h2 {
   padding: 20px 30px 10px 30px;
@@ -370,10 +356,6 @@ select:-webkit-autofill:focus {
   max-width: 400px;
   height: auto;
   padding: 0 30px;
-  /* border: 1px rgba(255, 255, 255, 0.349) solid; */
-  /* background: rgba(0, 225, 255, 0.034); */
-  /* border-bottom: 1px solid rgba(255, 255, 255, 0.418); */
-  /* border-radius: 34%; */
   z-index: 2;
 }
 
@@ -383,8 +365,6 @@ select:-webkit-autofill:focus {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   border-top: 1px solid rgba(91, 122, 126, 0.295);
-  /* border-top: 10px solid
-    linear-gradient(0.75turn, var(--dark-color), rgba(33, 46, 54, 0.79)); */
 
   padding-top: 40px;
 }
@@ -620,18 +600,22 @@ i.react {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 780px;
+  height: 680px;
   max-width: 1000px;
 }
 .contact .flex_contact .contact_info {
   flex: 1;
   color: var(--dark-color);
-  background: linear-gradient(0.9turn, rgb(232, 244, 255), rgb(176, 189, 197));
+  background: linear-gradient(
+    0.9turn,
+    rgba(232, 244, 255, 0.9),
+    rgba(176, 189, 197, 0.9)
+  );
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 120px 60px;
+  padding: 70px;
   height: 100%;
   transform: translate(0px, -200%);
   transition: all 600ms ease-in-out;
@@ -650,7 +634,7 @@ i.react {
 }
 .contact .flex_contact .contact_info p {
   font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 17px;
+  font-size: 18px;
   text-align: justify;
 }
 .contact .flex_contact .contact_info .icons_contact {
@@ -659,6 +643,7 @@ i.react {
   width: 100%;
   justify-content: space-around;
   align-items: center;
+  /* margin: auto; */
 }
 .contact .flex_contact .contact_info .icons_contact .item {
   display: flex;
@@ -666,6 +651,7 @@ i.react {
   justify-content: center;
   align-items: center;
 }
+
 .contact .flex_contact .contact_info .icons_contact .item #contact_icon {
   transition: 200ms ease-in-out;
   padding: 0 10px;
@@ -683,21 +669,36 @@ i.react {
   opacity: 1;
   transform: translate(0, 10px);
 }
+.contact .flex_contact .contact_info .quote {
+  position: relative;
+  text-align: center;
+  align-self: center;
+  font-size: 30px;
+  padding: 5px 0;
+  margin: auto;
+  background: var(--dark-color);
+  color: #fff;
+  width: 100%;
+}
 
 .contact .flex_contact .form {
   flex: 1;
-  background: linear-gradient(rgb(18, 30, 37) 75%, rgb(30, 50, 61));
+  background: linear-gradient(
+    rgba(18, 30, 37, 0.94) 75%,
+    rgba(30, 50, 61, 0.94)
+  );
   color: var(--light-hover-color);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 120px 60px 0px 60px;
+  padding: 70px;
   height: 100%;
   transform: translate(0px, 200%);
   transition: all 600ms ease-in-out;
   opacity: 0;
 }
+
 .contact .flex_contact .form.show {
   transform: translate(0px, 0%);
   opacity: 1;
@@ -777,7 +778,7 @@ i.react {
   color: #ddd;
   width: 100%;
   border: none;
-  background: rgb(18, 30, 37);
+  background: rgba(18, 30, 37, 0);
   border-bottom: 2px solid #aaa;
   padding: 8px 0;
   font-weight: 50;
