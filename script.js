@@ -319,16 +319,16 @@ const under2 = document.querySelectorAll(".under2");
 under_text.forEach((el, i) => {
   let divWidth = el.offsetWidth;
   el.addEventListener("mouseover", () => {
-    under[i].style.transform = `translate(-${divWidth}px, 0)`;
-    under2[i].style.transform = `translate(-${divWidth}px, 0)`;
+    under[i].style.transform = `translate(-${divWidth + 2}px, 0)`;
+    under2[i].style.transform = `translate(-${divWidth + 2}px, 0)`;
     under[i].style.transition = `0ms ease-out `;
     under2[i].style.transition = `0ms ease-out `;
 
     setTimeout(() => {
-      under[i].style.background = "#fff";
+      under[i].style.background = "var(--underline-color)";
       under[i].style.transition = `200ms ease-out `;
       under[i].style.transform = "translate(0, 0)";
-      under2[i].style.background = "var(--underline-color)";
+      under2[i].style.background = "var(--line-color)";
       under2[i].style.transition = `250ms ease-out`;
     }, 30);
   });
@@ -338,7 +338,7 @@ under_text.forEach((el, i) => {
     under2[i].style.transform = "translate(0px, 0)";
 
     setTimeout(() => {
-      under[i].style.transform = `translate(${divWidth}px, 0)
+      under[i].style.transform = `translate(${divWidth + 2}px, 0)
         `;
       setTimeout(() => {
         under[i].style.transition = `0ms ease-out `;

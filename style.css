@@ -6,18 +6,24 @@
   --hover-navbar-color: #24848de5;
   --neon-shadow-color: rgba(255, 255, 255, 0.466);
   --light-hover-color: rgb(208, 233, 232);
-  --underline-color: rgb(33, 101, 122);
+  --line-color: #ff0677;
+  --underline-color: #00ff9f;
 
   --dark-color: rgb(33, 46, 54);
   --bright-color: #fff;
+
   /* other */
   --header-text-shadow: 0px 0px 3px rgb(73, 228, 255), 0px 0px 10px #000;
   --navbar-shadow: 4px;
   /* contact icon colors */
-  --icon-one: rgb(50, 148, 161);
+  /* --icon-one: rgb(0, 156, 177);
   --icon-two: rgb(195, 52, 52);
-  --icon-three: rgb(116, 83, 14);
-  --icon-four: rgb(75, 155, 61);
+  --icon-three: rgb(126, 78, 0);
+  --icon-four: rgb(75, 155, 61); */
+  --icon-one: #ff0677;
+  --icon-two: #ff0677;
+  --icon-three: #ff0677;
+  --icon-four: #ff0677;
 }
 
 * {
@@ -111,7 +117,8 @@ select:-webkit-autofill:focus {
   left: 0;
   width: 100%;
   height: 100vh;
-  background: rgba(55, 55, 58, 0.445);
+  /* background: rgba(55, 55, 58, 0.445); */
+  background: rgba(70, 85, 80, 0.335);
 }
 .header * {
   z-index: 5;
@@ -142,7 +149,7 @@ select:-webkit-autofill:focus {
 }
 .hero .header .name h1:hover,
 .hero .header .profession p:hover {
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--underline-color);
   text-shadow: 0px 0px 3px rgb(0, 204, 204);
 }
 #neon_md,
@@ -203,7 +210,7 @@ select:-webkit-autofill:focus {
     -1px -1px 2px var(--hover-navbar-color),
     1px -1px 2px var(--hover-navbar-color),
     -1px 1px 2px var(--hover-navbar-color);
-  color: #fff;
+  color: var(--underline-color);
 }
 /* --- */
 
@@ -260,7 +267,7 @@ select:-webkit-autofill:focus {
 }
 .navbar ul li a:hover,
 .navbar ul li a.current {
-  color: rgb(255, 255, 255);
+  color: #fff;
   text-shadow: 0px 0px 0px var(--light-hover-color);
 }
 /* --- */
@@ -268,8 +275,8 @@ select:-webkit-autofill:focus {
 /* Parallax Icons */
 .parallax_icons {
   position: absolute;
-  color: rgba(165, 206, 216, 0.09);
-  text-shadow: 0px 0px 20px rgba(0, 225, 255, 0.26);
+  color: #4b7c9936;
+  text-shadow: 0px 0px 20px #3075815d;
   display: flex;
   z-index: 2;
   top: -20%;
@@ -305,10 +312,10 @@ select:-webkit-autofill:focus {
 }
 .about .parallax_bg {
   position: absolute;
-  top: -100px;
+  top: -300px;
   left: 0;
   width: 100%;
-  height: 120%;
+  height: 150%;
   object-fit: cover;
   z-index: -1;
 }
@@ -346,8 +353,8 @@ select:-webkit-autofill:focus {
   font-weight: 300;
 }
 .about .text p span {
-  color: rgba(156, 242, 245, 0.924);
-  text-shadow: 0px 0px 4px rgba(114, 190, 200, 0.548);
+  color: var(--underline-color);
+  text-shadow: 0px 0px 4px rgba(150, 194, 179, 0.76);
   font-weight: 400;
 }
 .about .flex_about img {
@@ -364,7 +371,7 @@ select:-webkit-autofill:focus {
   text-align: center;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  border-top: 1px solid rgba(91, 122, 126, 0.295);
+  border-top: 1px solid #426b757c;
 
   padding-top: 40px;
 }
@@ -384,8 +391,9 @@ select:-webkit-autofill:focus {
   padding-top: 5px;
   display: flex;
   justify-content: center;
-  color: rgb(220, 255, 252);
-  text-shadow: 0px 0px 2px rgb(73, 228, 255), 0px 0px 2px rgb(0, 0, 0);
+  /* color: rgb(220, 255, 252); */
+  color: rgb(206, 250, 228);
+  text-shadow: 0px 0px 2px rgb(73, 255, 185), 0px 0px 2px rgb(0, 0, 0);
 }
 
 .about .grid_skills .skill > i {
@@ -419,7 +427,8 @@ select:-webkit-autofill:focus {
 #t_star.neon,
 #r_star.neon,
 #n_star.neon {
-  text-shadow: 0px 0px 10px rgba(255, 244, 180, 0.596);
+  /* text-shadow: 0px 0px 10px rgba(255, 244, 180, 0.596); */
+  text-shadow: 0px 0px 10px rgba(241, 181, 221, 0.671);
   transition: text-shadow 200ms ease-in-out;
 }
 
@@ -442,17 +451,25 @@ i.react {
 /* --- */
 /* PROJECTS */
 .projects {
+  position: relative;
   border-bottom: 1px rgba(255, 255, 255, 0.288) solid;
   border-top: 1px rgba(255, 255, 255, 0.288) solid;
   padding: 100px 0px;
-  background-color: #26363f;
+  background-color: #28323b;
   background-image: url("https://www.transparenttextures.com/patterns/triangles.png");
-  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+
   text-align: center;
-  box-shadow: 0px 0px 7px 3px rgb(29, 129, 168);
+  box-shadow: 0px 0px 5px 1px rgba(29, 129, 168, 0.555);
   /* box-shadow: 10px 0 5px -2px #888; */
 }
-.projects h2 {
+.projects:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background: rgba(1, 255, 179, 0.103); */
 }
 .flex_projects {
   padding-top: 20px;
@@ -511,6 +528,7 @@ i.react {
   transition: 250ms ease-in-out;
 }
 .projects .flex_projects .project .show_box p {
+  font-weight: 300;
   padding: 30px 0;
 }
 .projects .flex_projects .project .show_box .buttons {
@@ -534,8 +552,8 @@ i.react {
   height: 100%;
   background: linear-gradient(
     0.75turn,
-    rgba(12, 124, 158, 0.192),
-    rgba(19, 61, 71, 0.5)
+    rgba(22, 59, 70, 0.192),
+    rgba(24, 50, 56, 0.5)
   );
 
   transition: 350ms ease-in-out;
@@ -554,6 +572,7 @@ i.react {
   left: 0%;
   padding: 4px 0px 4px 35px;
   z-index: 3;
+  /* background: rgba(77, 96, 105, 0.288); */
   background: rgba(77, 96, 105, 0.288);
   box-shadow: 0px 0px 5px 5px rgba(16, 44, 51, 0.171);
   width: 100%;
@@ -561,15 +580,15 @@ i.react {
 }
 .projects .flex_projects .project .info h3 {
   font-size: 40px;
-  font-weight: 500;
+  font-weight: 300;
   line-height: 1.2;
-  text-shadow: 0px 0px 2px rgb(73, 228, 255), 0px 0px 3px rgb(0, 0, 0);
+  text-shadow: 0px 0px 3px rgb(73, 228, 255), 0px 0px 3px rgb(0, 0, 0);
 }
 .projects .flex_projects .project .info p {
-  font-style: italic;
+  /* font-style: italic; */
   font-weight: 300;
   font-size: 20px;
-  text-shadow: 0px 0px 2px rgb(73, 228, 255), 0px 0px 3px rgb(0, 0, 0);
+  text-shadow: 0px 0px 3px rgb(73, 228, 255), 0px 0px 3px rgb(0, 0, 0);
 }
 /* --- */
 /* Contact */
@@ -606,11 +625,14 @@ i.react {
 .contact .flex_contact .contact_info {
   flex: 1;
   color: var(--dark-color);
-  background: linear-gradient(
+  position: relative;
+  /* background: linear-gradient(
     0.9turn,
     rgba(232, 244, 255, 0.9),
     rgba(176, 189, 197, 0.9)
-  );
+  ); */
+  /* background: rgba(255, 255, 255, 0.8); */
+  background: url("./img/parallax_bg_invert.jpg") no-repeat center top/cover;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -621,6 +643,18 @@ i.react {
   transition: all 600ms ease-in-out;
   opacity: 0;
 }
+.contact .flex_contact .contact_info:before {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  position: absolute;
+}
+.contact .flex_contact .contact_info > * {
+  z-index: 10;
+}
 
 .contact .flex_contact .contact_info.show {
   transform: translate(0px, 0%);
@@ -630,10 +664,9 @@ i.react {
   color: var(--dark-color);
   text-shadow: none;
   font-weight: 500;
-  margin: 10px 0;
+  margin: 10px 0 20px 0;
 }
 .contact .flex_contact .contact_info p {
-  font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 18px;
   text-align: justify;
 }
@@ -683,10 +716,9 @@ i.react {
 
 .contact .flex_contact .form {
   flex: 1;
-  background: linear-gradient(
-    rgba(18, 30, 37, 0.94) 75%,
-    rgba(30, 50, 61, 0.94)
-  );
+  position: relative;
+  /* background: rgba(18, 30, 37, 0.94); */
+  background: url("./img/parallax_bg_2.jpg") no-repeat bottom left/cover;
   color: var(--light-hover-color);
   display: flex;
   flex-direction: column;
@@ -697,6 +729,18 @@ i.react {
   transform: translate(0px, 200%);
   transition: all 600ms ease-in-out;
   opacity: 0;
+}
+.contact .flex_contact .form:before {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(16, 28, 32, 0.8);
+  position: absolute;
+}
+.contact .flex_contact .form > * {
+  z-index: 10;
 }
 
 .contact .flex_contact .form.show {
@@ -736,9 +780,9 @@ i.react {
   text-shadow: none;
 }
 .contact .flex_contact .form p {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-weight: thin;
-  font-size: 15px;
+  /* font-family: Georgia, "Times New Roman", Times, serif; */
+  font-weight: 300;
+  font-size: 14px;
   margin-bottom: 20px;
 }
 
@@ -791,7 +835,7 @@ i.react {
 }
 
 .contact .flex_contact .form .form_group .input.text {
-  height: 150px;
+  height: 130px;
   width: 100%;
   resize: vertical;
   overflow: auto;
@@ -802,6 +846,7 @@ i.react {
 footer {
   color: #fff;
   background: var(--dark-color);
+
   padding: 5px 0 30px 0;
 }
 
