@@ -12,8 +12,26 @@
 }
 
 @media (max-width: 1199px) {
+  .projects {
+    padding: 80px 0;
+  }
+  .about {
+    padding: 80px 0;
+  }
+  .flex_about {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  .flex_about .text {
+    margin: 0px 0 40px 0;
+  }
   .flex_about img {
-    display: none;
+    /* display: none; */
+    width: 300px;
+    margin: auto;
+    opacity: 0.9;
+    /* background: rgba(0, 0, 0, 0.144); */
   }
 }
 
@@ -21,7 +39,7 @@
   .about .grid_skills {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 35px;
+    gap: 50px;
   }
   #contact_form {
     height: 100%;

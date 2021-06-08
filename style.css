@@ -890,7 +890,6 @@ i.react {
 footer {
   color: #fff;
   background: var(--dark-color);
-
   padding: 5px 0 30px 0;
 }
 
@@ -899,7 +898,6 @@ footer .flex_footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px;
 }
 footer .flex_footer .logo_footer {
   display: flex;
@@ -908,6 +906,7 @@ footer .flex_footer .logo_footer {
 footer img {
   position: relative;
   width: 170px;
+
   cursor: pointer;
   padding-top: 50px;
   z-index: 1;
