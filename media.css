@@ -11,21 +11,6 @@
   }
 }
 
-/* Don't  */
-/* @media (max-width: 767px) {
-  .videoBG {
-    display: none;
-  }
-  .hero {
-    background: url("./img/poster.jpg") no-repeat center center/cover;
-    margin: 0 auto;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-}  */
-
 @media (max-width: 1199px) {
   .flex_about img {
     display: none;
@@ -40,15 +25,12 @@
   }
   #contact_form {
     height: 100%;
-    /* background: red; */
   }
   #contact_form .container {
     padding: 0;
   }
   .contact {
     height: 100%;
-    /* background: green;
-    border: 10px yellow solid; */
   }
   .contact .flex_contact {
     flex-direction: column-reverse;
@@ -61,14 +43,94 @@
   .contact .flex_contact .form,
   .contact .flex_contact .contact_info {
     padding: 5% 15%;
+    transform: translate(200%, 0px);
+  }
+  .contact .flex_contact .contact_info {
+    transform: translate(-200%, 0px);
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 760px) {
   footer .flex_footer .social_footer ul {
     width: 400px;
   }
-  /* hamburger menu */
+  .navbar .flex_navbar {
+  }
+
+  .navbar .flex_navbar .nav_ul {
+    /* display: none; */
+    order: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    font-size: 45px;
+    font-weight: 500;
+    padding-left: 100px;
+    display: flex;
+    position: fixed;
+
+    background: var(--dark-color);
+    transform: translate(-120%, 0);
+    transition: transform 450ms ease-in-out;
+  }
+  .navbar .flex_navbar .nav_ul img {
+    display: block;
+    width: 350px;
+    padding: 35px 25px 0px 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+  }
+  .navbar .flex_navbar .nav_ul .social {
+    order: 2;
+    align-self: flex-start;
+    position: absolute;
+    bottom: 0;
+    padding: 50px 25px;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: flex-start;
+
+    width: 100%;
+  }
+  .navbar .flex_navbar .nav_ul .social a {
+    padding-right: 40px;
+  }
+  .navbar .flex_navbar .nav_ul.show {
+    transition: transform 450ms ease-in-out;
+    transform: translate(0, 0);
+  }
+
+  .navbar .flex_navbar .nav_ul .close_ham {
+    cursor: pointer;
+    padding: 0 15px 30px 15px;
+    position: absolute;
+    align-self: flex-end;
+    top: 0;
+    padding: 30px 50px;
+  }
+
+  .navbar .flex_navbar .nav_ul .close_ham > * {
+    position: absolute;
+    width: 4px;
+    height: 50px;
+    background: #fff;
+    transition: 350ms ease-in-out;
+  }
+
+  .navbar .flex_navbar .nav_ul .close_ham .one {
+    transform: rotate(45deg);
+  }
+  .navbar .flex_navbar .nav_ul .close_ham .two {
+    transform: rotate(135deg);
+  }
+  .navbar .flex_navbar .hamburger {
+    display: block;
+  }
 }
 
 @media (max-width: 420px) {

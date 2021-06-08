@@ -173,7 +173,7 @@ window.addEventListener("scroll", () => {
     if (window.pageYOffset < 100) {
       navbar.style.transform = "translate(0, 0)";
     }
-  } else {
+  } else if (window.innerWidth > 760) {
     overlay.style.background = `linear-gradient(
       0deg,
       rgba(33, 46, 54, ${st / 300}) 0%,
@@ -189,13 +189,19 @@ window.addEventListener("scroll", () => {
 window.addEventListener("mousemove", (el) => {
   if (el.screenY < 280) {
     navbar.style.transform = "translate(0, 0px)";
-  } else if (el.screenY > 380 && window.pageYOffset > 100) {
+  } else if (
+    el.screenY > 380 &&
+    window.pageYOffset > 100 &&
+    window.innerWidth > 760
+  ) {
     navbar.style.transform = "translate(0, -100px)";
   }
 });
 
 // Smooth Scrolling
 function smoothScroll(target, duration) {
+  // First close hamburger menu
+  nav_ul.classList.remove("show");
   const section = document.querySelector(target);
   const sectionPosition = section.getBoundingClientRect().top;
   const startPosition = window.pageYOffset;
@@ -223,6 +229,7 @@ function smoothScroll(target, duration) {
 
 const home = document.getElementById("nav_home");
 const home_bottom = document.getElementById("nav_home_bottom");
+const home_ham = document.getElementById("nav_home_ham");
 const about = document.getElementById("nav_about");
 const projects = document.getElementById("nav_projects");
 const contact = document.getElementById("nav_contact");
@@ -240,6 +247,9 @@ home.addEventListener("click", () => {
   smoothScroll(".hero", 1000);
 });
 home_bottom.addEventListener("click", () => {
+  smoothScroll(".hero", 1000);
+});
+home_ham.addEventListener("click", () => {
   smoothScroll(".hero", 1000);
 });
 
@@ -421,6 +431,36 @@ contact_icons.forEach((el, i) => {
   el.addEventListener("mouseout", () => {
     contact_texts[i].classList.remove("show");
     el.style.color = "var(--dark-color)";
+  });
+});
+// Hamburger menu
+const hamburger = document.getElementById("hamburger");
+const nav_ul = document.getElementById("nav_ul");
+
+hamburger.addEventListener("click", () => {
+  nav_ul.classList.toggle("show");
+});
+// Hamburger - show - close
+const close_hamGroup = document.querySelector(".close_ham");
+const yButton = document.querySelectorAll(".y");
+
+// close X button
+close_hamGroup.addEventListener("click", () => {
+  nav_ul.classList.remove("show");
+});
+
+close_hamGroup.addEventListener("mouseover", () => {
+  yButton.forEach((el) => {
+    el.style.background = "var(--line-color)";
+    yButton[0].style.transform = "rotate(-135deg)";
+    yButton[1].style.transform = "rotate(-45deg)";
+  });
+});
+close_hamGroup.addEventListener("mouseout", () => {
+  yButton.forEach((el) => {
+    el.style.background = "#fff";
+    yButton[0].style.transform = "rotate(45deg)";
+    yButton[1].style.transform = "rotate(135deg)";
   });
 });
 

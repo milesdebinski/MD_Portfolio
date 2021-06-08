@@ -188,11 +188,13 @@ select:-webkit-autofill:focus {
   align-items: center;
   z-index: 100;
 }
+.navbar .flex_navbar .nav_ul .social a,
 .hero .header .social a {
   color: var(--light-hover-color);
   cursor: pointer;
 }
-.hero .header .social p {
+
+/* .hero .header .social p {
   margin-left: -5px;
   margin-top: 3px;
   text-align: center;
@@ -201,7 +203,7 @@ select:-webkit-autofill:focus {
   font-weight: 700;
   cursor: pointer;
   border-radius: 50%;
-}
+} */
 .social i,
 .social p {
   text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1), -1px -1px 8px rgba(0, 0, 0, 0.1),
@@ -223,6 +225,7 @@ select:-webkit-autofill:focus {
   width: 100%;
   height: 90px;
   position: fixed;
+  /* display: flex; */
   background: rgba(33, 46, 54, 0.5);
   transform: translate(0, 0px);
   z-index: 4;
@@ -230,8 +233,13 @@ select:-webkit-autofill:focus {
 }
 .navbar .flex_navbar {
   display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 90px;
 }
-.navbar ul {
+.navbar .nav_ul {
   flex: 1;
   width: 100%;
   height: 90px;
@@ -242,13 +250,30 @@ select:-webkit-autofill:focus {
   font-size: 24px;
   font-family: "roboto", sans-serif;
 }
+.nav_ul .social,
+img.logo_ham {
+  display: none;
+  /* width: 10px; */
+}
+
+.navbar .hamburger {
+  background-color: transparent;
+  border: 0;
+  color: #fff;
+  font-size: 19px;
+  cursor: pointer;
+  display: none;
+}
+.navbar .hamburger:focus {
+  outline: none;
+}
+
 .navbar svg {
-  flex: 1;
+  /* flex: 1; */
   width: 70px;
   height: 100%;
   max-width: 70px;
   cursor: pointer;
-  margin: auto;
 }
 .navbar svg .svg_logo {
   transition: 200ms ease-in-out;
@@ -482,6 +507,7 @@ i.react {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden;
 }
 
 .projects .flex_projects .project {
@@ -607,7 +633,7 @@ i.react {
   background: rgba(0, 0, 0, 0);
   transform: translate(-50%, -50%);
   transition: all 400ms ease-in-out;
-  /* z-index: -1; */
+  z-index: -1;
 }
 .contact h3 {
   font-weight: 400;
