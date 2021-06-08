@@ -493,16 +493,29 @@ const validateInputs = () => {
 };
 
 form_submit.addEventListener("submit", (el) => {
-  console.log("SENT");
   el.preventDefault();
   validateInputs();
   if (isFormValid) {
     form.remove();
     thank_you.classList.remove("hide");
     // AJAX REQUEST HERE
+    $.ajax({
+      method: 'POST',
+      url: "/sendmail",
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      transformRequest: function(obj) {
+          var str = [];
+          for(var p in obj)
+          str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+          return str.join("&");
+      },
+      //title and text are obligatory because of backend construction
+      data: {title: "elo", text:"nała"}
+    }).then(function () {});
   }
 });
 
 form_submit.addEventListener("input", () => {
   validateInputs();
 });
+
