@@ -199,8 +199,10 @@ window.addEventListener("mousemove", (el) => {
 });
 
 // Smooth Scrolling
+
 function smoothScroll(target, duration) {
   // First close hamburger menu
+
   nav_ul.classList.remove("show");
   const section = document.querySelector(target);
   const sectionPosition = section.getBoundingClientRect().top;
@@ -439,6 +441,7 @@ const nav_ul = document.getElementById("nav_ul");
 
 hamburger.addEventListener("click", () => {
   nav_ul.classList.toggle("show");
+  nav_ul.style.transition = "transform 450ms ease-in-out";
 });
 // Hamburger - show - close
 const close_hamGroup = document.querySelector(".close_ham");

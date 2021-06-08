@@ -34,7 +34,7 @@
   }
   .contact .flex_contact {
     flex-direction: column-reverse;
-    height: 100%;
+    height: 100vh;
   }
 
   .contact .flex_contact .form form {
@@ -42,7 +42,7 @@
   }
   .contact .flex_contact .form,
   .contact .flex_contact .contact_info {
-    padding: 5% 15%;
+    padding: 5% 15% 10% 15%;
     transform: translate(200%, 0px);
   }
   .contact .flex_contact .contact_info {
@@ -54,11 +54,8 @@
   footer .flex_footer .social_footer ul {
     width: 400px;
   }
-  .navbar .flex_navbar {
-  }
 
   .navbar .flex_navbar .nav_ul {
-    /* display: none; */
     order: 0;
     flex-direction: column;
     justify-content: center;
@@ -75,7 +72,6 @@
 
     background: var(--dark-color);
     transform: translate(-120%, 0);
-    transition: transform 450ms ease-in-out;
   }
   .navbar .flex_navbar .nav_ul img {
     display: block;
@@ -101,7 +97,7 @@
     padding-right: 40px;
   }
   .navbar .flex_navbar .nav_ul.show {
-    transition: transform 450ms ease-in-out;
+    /* transition: transform 450ms ease-in-out; */
     transform: translate(0, 0);
   }
 
