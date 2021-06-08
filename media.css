@@ -42,11 +42,12 @@
   }
   .contact .flex_contact .form,
   .contact .flex_contact .contact_info {
-    padding: 5% 15% 10% 15%;
+    /* padding: 5% 15% 10% 15%; */
     transform: translate(200%, 0px);
   }
   .contact .flex_contact .contact_info {
     transform: translate(-200%, 0px);
+    flex: 0;
   }
 }
 

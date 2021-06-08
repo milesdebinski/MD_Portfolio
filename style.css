@@ -655,18 +655,12 @@ i.react {
   flex: 1;
   color: var(--dark-color);
   position: relative;
-  /* background: linear-gradient(
-    0.9turn,
-    rgba(232, 244, 255, 0.9),
-    rgba(176, 189, 197, 0.9)
-  ); */
-  /* background: rgba(255, 255, 255, 0.8); */
   background: url("./img/parallax_bg_invert.jpg") no-repeat center top/cover;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 70px;
+  padding: 30px 60px 80px 60px;
   height: 100%;
   transform: translate(0px, -200%);
   transition: all 600ms ease-in-out;
