@@ -50,7 +50,7 @@
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 780px) {
   footer .flex_footer .social_footer ul {
     width: 400px;
   }

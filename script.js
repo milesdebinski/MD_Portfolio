@@ -173,7 +173,7 @@ window.addEventListener("scroll", () => {
     if (window.pageYOffset < 100) {
       navbar.style.transform = "translate(0, 0)";
     }
-  } else if (window.innerWidth > 760) {
+  } else if (window.innerWidth > 780) {
     overlay.style.background = `linear-gradient(
       0deg,
       rgba(33, 46, 54, ${st / 300}) 0%,
@@ -192,7 +192,7 @@ window.addEventListener("mousemove", (el) => {
   } else if (
     el.screenY > 380 &&
     window.pageYOffset > 100 &&
-    window.innerWidth > 760
+    window.innerWidth > 780
   ) {
     navbar.style.transform = "translate(0, -100px)";
   }
