@@ -16,14 +16,14 @@
   --header-text-shadow: 0px 0px 3px rgb(73, 228, 255), 0px 0px 10px #000;
   --navbar-shadow: 4px;
   /* contact icon colors */
-  /* --icon-one: rgb(0, 156, 177);
-  --icon-two: rgb(195, 52, 52);
-  --icon-three: rgb(126, 78, 0);
-  --icon-four: rgb(75, 155, 61); */
   --icon-one: #ff0677;
+  --icon-two: #00c7eb;
+  --icon-three: #00da86;
+  --icon-four: #0069e0;
+  /* --icon-one: #ff0677;
   --icon-two: #ff0677;
   --icon-three: #ff0677;
-  --icon-four: #ff0677;
+  --icon-four: #ff0677; */
 }
 
 * {
@@ -65,6 +65,10 @@ a {
   text-decoration: none;
   color: var(--bright-color);
   cursor: pointer;
+}
+button {
+  cursor: pointer;
+  border: none;
 }
 li {
   list-style: none;
@@ -773,9 +777,15 @@ i.react {
 .contact .flex_contact .form .flex_close .close .two {
   transform: rotate(135deg);
 }
-.contact .flex_contact .form a {
+.contact .flex_contact .form button {
   margin-top: 30px;
 }
+.contact .flex_contact .form button.block {
+  cursor: not-allowed;
+  border-bottom: rgba(255, 0, 0, 0.7) 4px solid;
+  background: rgba(255, 255, 255, 0.3);
+}
+
 .contact .flex_contact .form h3 {
   text-shadow: none;
 }
@@ -839,6 +849,17 @@ i.react {
   width: 100%;
   resize: vertical;
   overflow: auto;
+}
+.contact .flex_contact .thank_you {
+  flex: 1;
+  background: var(--dark-color);
+  text-align: center;
+  font-size: 40px;
+  margin: auto;
+  color: #fff;
+  padding: 70px;
+  height: 100%;
+  transition: all 600ms ease-in-out;
 }
 
 /* --- */

@@ -352,51 +352,60 @@
                     <div class="x two"></div>
                   </div></div>
                 <p>Work opportunities, new projects or just a chinwag. </p>
-                <div class="form_group">
-                  <label for="name">Name *</label>
-                  <input type="text" name="name" class="input under_text name"><div
-                    class="under"><div class="under2"></div></div>
-                </div>
-                <div class="form_group">
-                  <label for="email">E-mail *</label>
-                  <input type="text" name="email" class="input under_text
-                    email"><div
-                    class="under"><div class="under2"></div></div>
-                </div>
-                <div class="form_group">
-                  <label for="text">Message *</label>
+                <form action="/" name='contact-form'>
+                  <div class="form_group">
+                    <label for="name">Name *</label>
+                    <input type="text" name="name" class="input under_text
+                      name"><div
+                      class="under"><div class="under2"></div></div>
+                  </div>
+                  <div class="form_group">
+                    <label for="email">E-mail *</label>
+                    <input type="text" name="email" class="input under_text
+                      email"><div
+                      class="under"><div class="under2"></div></div>
+                  </div>
+                  <div class="form_group">
+                    <label for="text">Message *</label>
 
-                  <textarea class="input under_text text"></textarea><div
-                    class="under"><div class="under2"></div></div>
+                    <textarea class="input under_text text" name='message'></textarea><div
+                      class="under"><div class="under2"></div></div>
+                  </div>
+                  <but>
+                    <button type='submit' class='block submit_button btn'>Send
+                      Message</button>
+
+                  </form>
                 </div>
-                <a href="" class="btn">Send Message</a>
+                <div class="thank_you hide">Thank you, your message has been
+                  sent!
+                </div>
               </div>
             </div>
-          </div>
-        </section>
-        <footer>
-          <div class="flex_footer">
-            <div class="logo_footer">
-              <img id="nav_home_bottom" src="./img/LOGO_svg1.svg" alt=""
-                class="logo_footer">
-              <i class="arrow_top fas fa-arrow-up"></i>
-            </div>
-
-            <div class="social_footer">
-              <ul>
-                <li><a id="github" class="under_text" href="">Github<div
-                      class="under"><div class="under2"></div></div></a></li>
-                <li><a id="linkedin" class="under_text" href="">Linkedin<div
-                      class="under"><div class="under2"></div></div></a></li>
-                <li><a id="resume" class="under_text" href="">Resume<div
-                      class="under"><div class="under2"></div></div></a></li>
+          </section>
+          <footer>
+            <div class="flex_footer">
+              <div class="logo_footer">
+                <img id="nav_home_bottom" src="./img/LOGO_svg1.svg" alt=""
+                  class="logo_footer">
+                <i class="arrow_top fas fa-arrow-up"></i>
               </div>
-              <p>&#169; 2021 Miles Debinski - contact</p>
-            </div>
 
-          </footer>
+              <div class="social_footer">
+                <ul>
+                  <li><a id="github" class="under_text" href="">Github<div
+                        class="under"><div class="under2"></div></div></a></li>
+                  <li><a id="linkedin" class="under_text" href="">Linkedin<div
+                        class="under"><div class="under2"></div></div></a></li>
+                  <li><a id="resume" class="under_text" href="">Resume<div
+                        class="under"><div class="under2"></div></div></a></li>
+                </div>
+                <p>&#169; 2021 Miles Debinski - contact</p>
+              </div>
 
-          <script src="script.js" defer></script>
+            </footer>
 
-        </body>
-      </html>
+            <script src="script.js" defer></script>
+
+          </body>
+        </html>

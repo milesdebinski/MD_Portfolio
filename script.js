@@ -162,11 +162,11 @@ window.addEventListener("scroll", () => {
   let st = window.pageYOffset;
   if (st < lastScrollTop) {
     // hide header
-    // overlay.style.background = `linear-gradient(
-    //   0deg,
-    //   rgba(33, 46, 54, ${st / 300}) 0%,
-    //   rgba(33, 46, 54, ${st / 700})20%
-    // )`;
+    overlay.style.background = `linear-gradient(
+      0deg,
+      rgba(33, 46, 54, ${st / 300}) 0%,
+      rgba(33, 46, 54, ${st / 700})20%
+    )`;
     navbar.style.transform = "translate(0, 0px)";
 
     // Show navbar when on Top
@@ -174,11 +174,11 @@ window.addEventListener("scroll", () => {
       navbar.style.transform = "translate(0, 0)";
     }
   } else {
-    // overlay.style.background = `linear-gradient(
-    //   0deg,
-    //   rgba(33, 46, 54, ${st / 300}) 0%,
-    //   rgba(33, 46, 54, ${st / 700})20%
-    // )`;
+    overlay.style.background = `linear-gradient(
+      0deg,
+      rgba(33, 46, 54, ${st / 300}) 0%,
+      rgba(33, 46, 54, ${st / 700})20%
+    )`;
     navbar.style.transform = "translate(0, -100px)";
   }
 
@@ -312,13 +312,15 @@ window.addEventListener("load", project_check);
 window.addEventListener("resize", project_check);
 // ---
 
-// Hover effect Navbar & Footer
+// Hover effect Navbar & Footer (links)
 const under_text = document.querySelectorAll(".under_text");
 const under = document.querySelectorAll(".under");
 const under2 = document.querySelectorAll(".under2");
 under_text.forEach((el, i) => {
-  let divWidth = el.offsetWidth;
   el.addEventListener("mouseover", () => {
+    // adjust length of the underline each time
+    let divWidth = el.offsetWidth;
+    // ---
     under[i].style.transform = `translate(-${divWidth + 2}px, 0)`;
     under2[i].style.transform = `translate(-${divWidth + 2}px, 0)`;
     under[i].style.transition = `0ms ease-out `;
@@ -334,6 +336,7 @@ under_text.forEach((el, i) => {
   });
 
   el.addEventListener("mouseout", () => {
+    let divWidth = el.offsetWidth;
     under2[i].style.transition = `260ms ease-out`;
     under2[i].style.transform = "translate(0px, 0)";
 
@@ -388,7 +391,7 @@ closeGroup.addEventListener("click", () => {
 
 closeGroup.addEventListener("mouseover", () => {
   xButton.forEach((el) => {
-    el.style.background = "var(--underline-color)";
+    el.style.background = "var(--line-color)";
     xButton[0].style.transform = "rotate(-135deg)";
     xButton[1].style.transform = "rotate(-45deg)";
   });
@@ -419,4 +422,44 @@ contact_icons.forEach((el, i) => {
     contact_texts[i].classList.remove("show");
     el.style.color = "var(--dark-color)";
   });
+});
+
+// Contact form validation
+const nameInput = document.querySelector("input[name='name']");
+const emailInput = document.querySelector("input[name='email']");
+const messageInput = document.querySelector("textarea[name='message']");
+const form_submit = document.querySelector("form[name='contact-form']");
+const thank_you = document.querySelector(".thank_you");
+const submit_button = document.querySelector(".submit_button");
+
+const isValidEmail = (email) => {
+  const re =
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+};
+
+let isFormValid = false;
+const validateInputs = () => {
+  if (nameInput.value && isValidEmail(emailInput.value) && messageInput.value) {
+    submit_button.classList.remove("block");
+    isFormValid = true;
+  } else {
+    submit_button.classList.add("block");
+    isFormValid = false;
+  }
+};
+
+form_submit.addEventListener("submit", (el) => {
+  console.log("SENT");
+  el.preventDefault();
+  validateInputs();
+  if (isFormValid) {
+    form.remove();
+    thank_you.classList.remove("hide");
+    // AJAX REQUEST HERE
+  }
+});
+
+form_submit.addEventListener("input", () => {
+  validateInputs();
 });
