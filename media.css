@@ -29,6 +29,7 @@
   .flex_about img {
     /* display: none; */
     width: 300px;
+    height: auto;
     margin: auto;
     opacity: 0.9;
     /* background: rgba(0, 0, 0, 0.144); */
