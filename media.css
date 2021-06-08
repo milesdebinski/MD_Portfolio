@@ -10,6 +10,8 @@
     height: 100%;
   }
 }
+
+/* Don't  */
 /* @media (max-width: 767px) {
   .videoBG {
     display: none;
@@ -23,3 +25,54 @@
     height: 100%;
   }
 }  */
+
+@media (max-width: 1199px) {
+  .flex_about img {
+    display: none;
+  }
+}
+
+@media (max-width: 950px) {
+  .about .grid_skills {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 35px;
+  }
+  #contact_form {
+    height: 100%;
+    /* background: red; */
+  }
+  #contact_form .container {
+    padding: 0;
+  }
+  .contact {
+    height: 100%;
+    /* background: green;
+    border: 10px yellow solid; */
+  }
+  .contact .flex_contact {
+    flex-direction: column-reverse;
+    height: 100%;
+  }
+
+  .contact .flex_contact .form form {
+    width: 100%;
+  }
+  .contact .flex_contact .form,
+  .contact .flex_contact .contact_info {
+    padding: 5% 15%;
+  }
+}
+
+@media (max-width: 720px) {
+  footer .flex_footer .social_footer ul {
+    width: 400px;
+  }
+  /* hamburger menu */
+}
+
+@media (max-width: 420px) {
+  footer .flex_footer .social_footer ul {
+    width: 250px;
+  }
+}

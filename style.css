@@ -245,9 +245,10 @@ select:-webkit-autofill:focus {
 .navbar svg {
   flex: 1;
   width: 70px;
-  height: auto;
+  height: 100%;
   max-width: 70px;
   cursor: pointer;
+  margin: auto;
 }
 .navbar svg .svg_logo {
   transition: 200ms ease-in-out;
@@ -376,7 +377,6 @@ select:-webkit-autofill:focus {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   border-top: 1px solid #426b757c;
-
   padding-top: 40px;
 }
 .about .grid_skills .skill {
@@ -605,10 +605,9 @@ i.react {
   top: 50%;
   left: 50%;
   background: rgba(0, 0, 0, 0);
-
   transform: translate(-50%, -50%);
   transition: all 400ms ease-in-out;
-  z-index: -1;
+  /* z-index: -1; */
 }
 .contact h3 {
   font-weight: 400;
@@ -730,9 +729,13 @@ i.react {
   align-items: flex-start;
   padding: 70px;
   height: 100%;
+  width: 100%;
   transform: translate(0px, 200%);
   transition: all 600ms ease-in-out;
   opacity: 0;
+}
+.contact .flex_contact .form form {
+  width: 100%;
 }
 .contact .flex_contact .form:before {
   content: "";
@@ -901,11 +904,13 @@ footer p {
   font-size: 14px;
   font-weight: 300;
 }
+
 footer .flex_footer .social_footer ul {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   width: 600px;
+  height: 100%;
   font-size: 16px;
   font-weight: 500;
   margin: 60px 0;
