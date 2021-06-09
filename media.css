@@ -66,6 +66,7 @@
   .contact .flex_contact .contact_info,
   .contact .flex_contact .form {
     padding: 20px 40px;
+    box-shadow: none;
   }
 
   .contact .flex_contact {
@@ -302,6 +303,7 @@
   .contact .flex_contact .contact_info .icons_contact {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    gap: 30px;
   }
 }
 @media (max-width: 365px) {

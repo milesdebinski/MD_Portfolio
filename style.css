@@ -640,28 +640,28 @@ i.react {
 .contact.show {
   opacity: "1";
   z-index: 5;
-
-  background: rgba(2, 23, 27, 0.657);
+  background: rgba(6, 15, 15, 0.6);
 }
 .contact .flex_contact {
   display: flex;
   justify-content: center;
   align-items: center;
-
   height: 680px;
 }
 .contact .flex_contact .contact_info {
   flex: 1;
   color: var(--dark-color);
   position: relative;
-  background: url("./img/parallax_bg_invert.jpg") no-repeat center top/cover;
+  background: rgba(194, 245, 250, 0.9);
+  /* background: url("./img/parallax_bg_invert.jpg") no-repeat center top/cover; */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 30px 60px 80px 60px;
+  padding: 70px;
   height: 100%;
   width: 100%;
+  box-shadow: 2px 2px 20px 3px rgba(0, 0, 0, 0.6);
 
   transform: translate(0px, -200%);
   transition: all 600ms ease-in-out;
@@ -673,7 +673,8 @@ i.react {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.8);
+
+  /* background: rgba(255, 255, 255, 0.8); */
   position: absolute;
 }
 .contact .flex_contact .contact_info > * {
@@ -740,8 +741,8 @@ i.react {
 .contact .flex_contact .form {
   flex: 1;
   position: relative;
-  /* background: rgba(18, 30, 37, 0.94); */
-  background: url("./img/parallax_bg_2.jpg") no-repeat bottom left/cover;
+  background: rgba(18, 30, 37, 0.9);
+  /* background: url("./img/parallax_bg_2.jpg") no-repeat bottom left/cover; */
   color: var(--light-hover-color);
   display: flex;
   flex-direction: column;
@@ -753,6 +754,7 @@ i.react {
   transform: translate(0px, 200%);
   transition: all 600ms ease-in-out;
   opacity: 0;
+  box-shadow: 5px 2px 10px 1px rgba(0, 0, 0, 0.6);
 }
 .contact .flex_contact .form form {
   width: 100%;
@@ -763,7 +765,7 @@ i.react {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(16, 28, 32, 0.8);
+  /* background: rgba(16, 28, 32, 0.8); */
   position: absolute;
 }
 .contact .flex_contact .form > * {

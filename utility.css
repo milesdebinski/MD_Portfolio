@@ -79,6 +79,10 @@
 
   /* box-shadow: 0 0 5px 1px rgba(178, 201, 202, 0.164); */
 }
+button.btn {
+  padding: 7px 8px;
+  font-size: 18px;
+}
 .btn:hover {
   /* color: var(--line-color); */
   background: rgba(255, 255, 255, 1);
