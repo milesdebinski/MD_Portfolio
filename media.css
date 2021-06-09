@@ -321,6 +321,10 @@
   }
 }
 @media (max-width: 340px) {
+  .navbar .flex_navbar .nav_ul {
+    padding-left: 15px;
+    font-size: 29px;
+  }
   .hero .header .name h1 {
     font-size: 50px;
   }
