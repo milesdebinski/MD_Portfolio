@@ -162,11 +162,11 @@ window.addEventListener("scroll", () => {
   let st = window.pageYOffset;
   if (st < lastScrollTop) {
     // hide header
-    overlay.style.background = `linear-gradient(
-      0deg,
-      rgba(33, 46, 54, ${st / 300}) 0%,
-      rgba(33, 46, 54, ${st / 700})20%
-    )`;
+    // overlay.style.background = `linear-gradient(
+    //   0deg,
+    //   rgba(33, 46, 54, ${st / 300}) 0%,
+    //   rgba(33, 46, 54, ${st / 700})20%
+    // )`;
     navbar.style.transform = "translate(0, 0px)";
 
     // Show navbar when on Top
@@ -174,11 +174,11 @@ window.addEventListener("scroll", () => {
       navbar.style.transform = "translate(0, 0)";
     }
   } else if (window.innerWidth > 780) {
-    overlay.style.background = `linear-gradient(
-      0deg,
-      rgba(33, 46, 54, ${st / 300}) 0%,
-      rgba(33, 46, 54, ${st / 700})20%
-    )`;
+    // overlay.style.background = `linear-gradient(
+    //   0deg,
+    //   rgba(33, 46, 54, ${st / 300}) 0%,
+    //   rgba(33, 46, 54, ${st / 700})20%
+    // )`;
     navbar.style.transform = "translate(0, -100px)";
   }
 
@@ -280,7 +280,11 @@ projects_array.forEach((el, i) => {
     covers_array[i].style.transform = "translate(0, 0)";
     img_array[i].style.transform = "scale(1.03)";
     info_array[i].style.transition = "600ms";
-    info_array[i].style.transform = "translate(0,-140px)";
+    if (window.innerWidth > 470) {
+      info_array[i].style.transform = "translate(0,-140px)";
+    } else {
+      info_array[i].style.transform = "translate(0,-80px)";
+    }
 
     setTimeout(() => {
       show_box_array[i].style.opacity = "1";
