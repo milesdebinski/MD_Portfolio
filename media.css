@@ -12,6 +12,10 @@
 }
 
 @media (max-width: 1199px) {
+  .navbar .flex_navbar .nav_ul .social a {
+    padding-right: 40px;
+    font-size: 35px;
+  }
   .projects {
     padding: 80px 0;
   }
@@ -97,16 +101,10 @@
     padding: 10px 0px;
   }
   .navbar svg {
-    /* flex: 1; */
-    /* width: 70px;
-    height: 100%;
-    max-width: 70px;
-    cursor: pointer; */
     margin-left: -20px;
   }
   .hero .header {
     margin-top: 100px;
-    /* border: 10px solid red; */
   }
   footer .flex_footer .social_footer ul {
     width: 400px;
@@ -128,7 +126,12 @@
     display: flex;
     position: fixed;
 
-    background: var(--dark-color);
+    background: linear-gradient(
+      0.8turn,
+      rgb(7, 43, 66),
+      rgb(50, 97, 95),
+      rgb(25, 122, 117)
+    );
     transform: translate(-120%, 0);
   }
   .navbar .flex_navbar .nav_ul img {

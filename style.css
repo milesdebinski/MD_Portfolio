@@ -652,7 +652,7 @@ i.react {
   flex: 1;
   color: var(--dark-color);
   position: relative;
-  background: rgba(194, 245, 250, 0.9);
+  background: rgba(221, 243, 245, 0.8);
   /* background: url("./img/parallax_bg_invert.jpg") no-repeat center top/cover; */
   display: flex;
   flex-direction: column;
