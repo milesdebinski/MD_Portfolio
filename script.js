@@ -399,6 +399,7 @@ contact.addEventListener("click", () => {
   contact_form.classList.add("show");
   contact_info.classList.add("show");
   form.classList.add("show");
+  nav_ul.classList.remove("show");
 });
 // close X button
 closeGroup.addEventListener("click", () => {

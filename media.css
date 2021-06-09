@@ -45,22 +45,35 @@
     grid-template-rows: 1fr 1fr;
     gap: 50px;
   }
-  #contact_form {
-    height: 100%;
-  }
-  #contact_form .container {
-    padding: 0;
-  }
+
   .contact {
-    height: 100%;
+    /* position: absolute; */
+    overflow-x: hidden;
+    background: rgba(0, 0, 0, 0);
+    transition: all 400ms ease-in-out;
+  }
+
+  .contact .container {
+    padding: 0px;
   }
   .contact .flex_contact {
+    /* position: relative; */
+    min-height: 100vh;
+    /* width: 100%; */
+    /* height: 100vh; */
+  }
+  .contact .flex_contact .contact_info,
+  .contact .flex_contact .form {
+    padding: 20px 40px;
+  }
+
+  .contact .flex_contact {
     flex-direction: column-reverse;
-    height: 100vh;
+    /* height: 100vh; */
   }
 
   .contact .flex_contact .form form {
-    width: 100%;
+    /* width: 100%; */
   }
   .contact .flex_contact .form,
   .contact .flex_contact .contact_info {
@@ -69,7 +82,7 @@
   }
   .contact .flex_contact .contact_info {
     transform: translate(-200%, 0px);
-    flex: 0;
+    /* flex: 0; */
   }
 }
 
@@ -284,6 +297,10 @@
     margin: 0 8px;
     font-size: 13px;
   }
+  .contact .flex_contact .contact_info .icons_contact {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
 }
 @media (max-width: 365px) {
   .navbar .flex_navbar .nav_ul {
@@ -315,7 +332,7 @@
     padding: 10px 0px;
   }
 }
-@media (max-width: 320px) {
+@media (max-width: 318px) {
   .projects .flex_projects .project .show_box .buttons a.btn {
     /* margin: 0 35px; */
     font-size: 9px;
