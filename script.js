@@ -282,8 +282,10 @@ projects_array.forEach((el, i) => {
     info_array[i].style.transition = "600ms";
     if (window.innerWidth > 470) {
       info_array[i].style.transform = "translate(0,-140px)";
+    } else if (window.innerWidth > 340) {
+      info_array[i].style.transform = "translate(0,-120px)";
     } else {
-      info_array[i].style.transform = "translate(0,-80px)";
+      info_array[i].style.transform = "translate(0,-100px)";
     }
 
     setTimeout(() => {
