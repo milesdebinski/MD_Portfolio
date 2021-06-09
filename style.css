@@ -550,15 +550,16 @@ i.react {
   position: absolute;
   z-index: 3;
   padding: 0px 40px;
-  text-align: justify;
-  bottom: 15%;
+  text-align: left;
+  bottom: 12%;
   transform: translate(0, 40px);
   opacity: 0;
   transition: 250ms ease-in-out;
 }
 .projects .flex_projects .project .show_box p {
   font-weight: 300;
-  padding: 30px 0;
+  padding: 30px 0 30px 0;
+  align-self: flex-start;
 }
 .projects .flex_projects .project .show_box .buttons {
   display: flex;
