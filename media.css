@@ -112,6 +112,7 @@
   }
 
   .navbar .flex_navbar .nav_ul {
+    position: relative;
     order: 0;
     flex-direction: column;
     justify-content: center;
