@@ -223,6 +223,7 @@
 @media (max-width: 560px) {
   .navbar .flex_navbar .nav_ul {
     padding-left: 50px;
+    font-size: 30px;
   }
   .projects .flex_projects .project .show_box p {
     font-size: 14px;
@@ -239,6 +240,10 @@
   }
 }
 @media (max-width: 470px) {
+  .navbar .flex_navbar .nav_ul {
+    padding-left: 50px;
+    font-size: 28px;
+  }
   .navbar .flex_navbar .nav_ul .social a {
     padding-right: 40px;
     font-size: 25px;
@@ -264,6 +269,10 @@
 }
 
 @media (max-width: 440px) {
+  .navbar .flex_navbar .nav_ul {
+    /* padding-left: 50px; */
+    font-size: 26px;
+  }
   .projects .flex_projects .project .show_box .buttons a.btn {
     font-size: 15px;
   }
@@ -312,7 +321,6 @@
 @media (max-width: 365px) {
   .navbar .flex_navbar .nav_ul {
     padding-left: 25px;
-    font-size: 35px;
   }
   .projects .flex_projects .project .show_box .buttons a.btn {
     font-size: 12px;
@@ -330,7 +338,7 @@
 @media (max-width: 340px) {
   .navbar .flex_navbar .nav_ul {
     padding-left: 15px;
-    font-size: 29px;
+    font-size: 24px;
   }
   .hero .header .name h1 {
     font-size: 50px;
