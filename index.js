@@ -7,9 +7,9 @@ const port = 8080
 //server address
 const hostname = '127.0.0.1';
 //email data
-const sender = "dark9666@gmail.com";
-const senderPass = "Kuc.2016";
-const reciver = "dariusz.witkowski98@gmail.com";
+const sender = "sender@email.com";
+const senderPass = "pass";
+const reciver = "reciver@email.com";
 //parses request body to get title and text
 app.use(bodyParser.urlencoded({ extended: true }));
 //loads all statics (js,css etc)
