@@ -199,10 +199,8 @@ window.addEventListener("mousemove", (el) => {
 });
 
 // Smooth Scrolling
-
 function smoothScroll(target, duration) {
-  // First close hamburger menu
-
+  // Close hamburger menu
   nav_ul.classList.remove("show");
   const section = document.querySelector(target);
   const sectionPosition = section.getBoundingClientRect().top;
@@ -259,7 +257,7 @@ home_ham.addEventListener("click", () => {
 // Effect on hover over SVG logo
 home.addEventListener("mouseover", () => {
   svg_logo.forEach((el) => {
-    el.style.fill = "var(--underline-color)";
+    el.style.fill = "var(--primary-color)";
   });
 });
 home.addEventListener("mouseout", () => {
@@ -345,10 +343,10 @@ under_text.forEach((el, i) => {
     under2[i].style.transition = `0ms ease-out `;
 
     setTimeout(() => {
-      under[i].style.background = "var(--underline-color)";
+      under[i].style.background = "var(--primary-color)";
       under[i].style.transition = `200ms ease-out `;
       under[i].style.transform = "translate(0, 0)";
-      under2[i].style.background = "var(--line-color)";
+      under2[i].style.background = "var(--secondary-color)";
       under2[i].style.transition = `250ms ease-out`;
     }, 30);
   });
@@ -410,7 +408,7 @@ closeGroup.addEventListener("click", () => {
 
 closeGroup.addEventListener("mouseover", () => {
   xButton.forEach((el) => {
-    el.style.background = "var(--line-color)";
+    el.style.background = "var(--secondary-color)";
     xButton[0].style.transform = "rotate(-135deg)";
     xButton[1].style.transform = "rotate(-45deg)";
   });
@@ -461,7 +459,7 @@ close_hamGroup.addEventListener("click", () => {
 
 close_hamGroup.addEventListener("mouseover", () => {
   yButton.forEach((el) => {
-    el.style.background = "var(--line-color)";
+    el.style.background = "var(--secondary-color)";
     yButton[0].style.transform = "rotate(-135deg)";
     yButton[1].style.transform = "rotate(-45deg)";
   });
@@ -503,8 +501,13 @@ form_submit.addEventListener("submit", (el) => {
   el.preventDefault();
   validateInputs();
   if (isFormValid) {
-    form.remove();
-    thank_you.classList.remove("hide");
+    // form.remove();
+    setTimeout(() => {
+      thank_you.classList.add("show");
+    }, 600);
+    setTimeout(() => {
+      thank_you.classList.remove("show");
+    }, 5500);
     // AJAX REQUEST HERE
     $.ajax({
       method: "POST",

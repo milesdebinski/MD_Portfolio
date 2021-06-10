@@ -72,6 +72,12 @@
     padding: 20px 40px;
     box-shadow: none;
   }
+  .contact .flex_contact .form .thank_you {
+    padding: 20px 40px;
+  }
+  .contact .flex_contact .form .thank_you p {
+    align-self: center;
+  }
 
   .contact .flex_contact {
     flex-direction: column-reverse;
