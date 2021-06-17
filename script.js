@@ -518,7 +518,7 @@ form_submit.addEventListener("submit", (el) => {
     // AJAX REQUEST HERE
     $.ajax({
       method: "POST",
-      url: "/sendmail",
+      url: "/mailer.php",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       transformRequest: function (obj) {
         var str = [];
