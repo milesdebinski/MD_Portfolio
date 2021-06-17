@@ -18,7 +18,7 @@
   /* contact icon colors */
   --icon-one: #ff0677;
   --icon-two: #00b6d6;
-  --icon-three: #00d181;
+  --icon-three: #00ad65;
   --icon-four: #0069e0;
   /* Alternative colors */
   /* --icon-one: #ff0677;
@@ -483,7 +483,7 @@ i.react {
   position: relative;
   border-bottom: 1px rgba(255, 255, 255, 0.288) solid;
   border-top: 1px rgba(255, 255, 255, 0.288) solid;
-  /* padding: 100px 0px; */
+  padding: 100px 0px;
   background-color: #28323b;
   background-image: url("https://www.transparenttextures.com/patterns/triangles.png");
 
@@ -757,13 +757,14 @@ i.react {
   transition: all 600ms ease-in-out;
   opacity: 0;
   box-shadow: 5px 2px 10px 1px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
 }
 .contact .flex_contact .form .thank_you {
   position: absolute;
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   background: #048b57;
   margin: auto;
   color: #fff;
@@ -771,19 +772,27 @@ i.react {
   left: 0;
   height: 100%;
   width: 100%;
-  transition: all 600ms ease-in-out;
-  opacity: 0;
+  transition: all 400ms ease-in-out;
+  /* opacity: 0; */
   padding: 70px;
+  transform: translate(-100%, 0);
 }
 .contact .flex_contact .form .thank_you.show {
   opacity: 1;
   z-index: 13;
-  /* transform: translate(-100%,0) */
+  transform: translate(0, 0);
 }
 .contact .flex_contact .form .thank_you p {
   text-align: center;
   font-size: 40px;
   font-weight: 400;
+  transform: translate(0, 50px);
+  opacity: 0;
+  transition: 300ms ease-in-out;
+}
+.contact .flex_contact .form .thank_you p.show {
+  opacity: 1;
+  transform: translate(0, 0);
 }
 .contact .flex_contact .form form {
   width: 100%;
@@ -894,7 +903,7 @@ i.react {
 }
 .contact .flex_contact .form .form_group .input:focus {
   outline: none;
-  border-bottom: 2px solid rgb(255, 255, 255);
+  border-bottom: 2px solid #fff;
   z-index: 10;
 }
 

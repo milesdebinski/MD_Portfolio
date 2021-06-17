@@ -478,6 +478,7 @@ const emailInput = document.querySelector("input[name='email']");
 const messageInput = document.querySelector("textarea[name='message']");
 const form_submit = document.querySelector("form[name='contact-form']");
 const thank_you = document.querySelector(".thank_you");
+const thank_you_text = document.querySelector(".thank_you_text");
 const submit_button = document.querySelector(".submit_button");
 
 const isValidEmail = (email) => {
@@ -504,10 +505,16 @@ form_submit.addEventListener("submit", (el) => {
     // form.remove();
     setTimeout(() => {
       thank_you.classList.add("show");
+      setTimeout(() => {
+        thank_you_text.classList.add("show");
+      }, 360);
     }, 600);
     setTimeout(() => {
       thank_you.classList.remove("show");
-    }, 5500);
+      setTimeout(() => {
+        thank_you_text.classList.remove("show");
+      }, 300);
+    }, 4000);
     // AJAX REQUEST HERE
     $.ajax({
       method: "POST",

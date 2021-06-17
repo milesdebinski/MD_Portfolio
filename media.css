@@ -41,6 +41,9 @@
 }
 
 @media (max-width: 950px) {
+  .contact .flex_contact .form .thank_you {
+    transform: translate(0, 100%);
+  }
   .projects .flex_projects .project {
     margin: 20px 0;
   }
@@ -74,9 +77,6 @@
   }
   .contact .flex_contact .form .thank_you {
     padding: 20px 40px;
-  }
-  .contact .flex_contact .form .thank_you p {
-    align-self: center;
   }
 
   .contact .flex_contact {
